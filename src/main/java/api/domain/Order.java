@@ -1,4 +1,4 @@
-package hiweb.conference.codepoem.api;
+package api.domain;
 
 public class Order {
 

@@ -1,5 +1,6 @@
-package hiweb.conference.codepoem.api;
+package api;
 
+import api.domain.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,7 @@ public class OrderController {
             @RequestParam(value = "address") String address
     ) {
         Order order = new Order(mail, quantity, address);
-        return String.format("Commande de %s pairs de crocs de la part de %s. " +
+        return String.format("Commande de %s pairs de hiShoes de la part de %s. " +
                 "Adresse de livraison : %s.",
                 order.quantity, order.mail, order.address);
     }
