@@ -1291,7 +1291,7 @@ public class Invoice {
     private final InvoiceId id;
     private final List<InvoiceLine> lines;
     private final TotalAmount totalAmount;
-    private final List<Payment> payments = new ArrayList<>();
+    private final List<PaymentDetail> payments = new ArrayList<>();
     private InvoiceStatus status;
 
     public Invoice(InvoiceId id, List<InvoiceLine> lines, TotalAmount totalAmount) {
@@ -1304,7 +1304,7 @@ public class Invoice {
         this.status = InvoiceStatus.PENDING;
     }
 
-    public void addPayment(Payment payment) {
+    public void addPayment(PaymentDetail payment) {
         if (getPaidAmount().plus(payment.amount()).isGreaterThan(totalAmount)) {
             throw new IllegalStateException("Payment exceeds total amount due");
         }

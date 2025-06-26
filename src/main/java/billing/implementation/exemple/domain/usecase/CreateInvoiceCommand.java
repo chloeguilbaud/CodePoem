@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class CreateInvoiceCommand {
 
-    private final Client client;
+    private final int client;
     private final List<HiShoe> products;
 
     public CreateInvoiceCommand(Client client, List<HiShoe> products) {

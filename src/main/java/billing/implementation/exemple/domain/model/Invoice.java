@@ -17,7 +17,7 @@ public class Invoice {
     private double totalAmountPayed;
     private final Client client;
     private boolean isPaid;
-    private final List<PaymentDetail> paiementDetail;
+    private final List<PaymentDetail> paiementDetails;
     private InvoiceStatus status;
 
     // Constructor
@@ -29,7 +29,7 @@ public class Invoice {
         this.itemList = itemList;
         this.totalAmount = calculateTotalAmount();
         this.isPaid = false; // Default state is unpaid
-        this.paiementDetail = new ArrayList<PaymentDetail>();
+        this.paiementDetails = new ArrayList<PaymentDetail>();
     }
 
     private double calculateTotalAmount() {
@@ -87,7 +87,7 @@ public class Invoice {
             this.status = InvoiceStatus.PAID;
         }
 
-        this.paiementDetail.add(paymentDetail);
+        this.paiementDetails.add(paymentDetail);
 
     }
 
@@ -95,8 +95,8 @@ public class Invoice {
         return client;
     }
 
-    public List<PaymentDetail> getPaiementDetail() {
-        return paiementDetail;
+    public List<PaymentDetail> getPaiementDetails() {
+        return paiementDetails;
     }
 
     public InvoiceStatus getStatus() {
