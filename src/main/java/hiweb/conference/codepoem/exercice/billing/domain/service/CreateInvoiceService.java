@@ -1,4 +1,16 @@
 package hiweb.conference.codepoem.exercice.billing.domain.service;
 
-public class CreateInvoiceService {
+import hiweb.conference.codepoem.exercice.billing.domain.model.Invoice;
+import hiweb.conference.codepoem.exercice.billing.domain.port.usecase.CreateInvoiceUseCase;
+
+import java.util.Date;
+import java.util.List;
+
+public class CreateInvoiceService implements CreateInvoiceUseCase {
+
+    @Override
+    public Invoice createInvoice(String invoiceId, List<String> items, double totalAmount) {
+        return new Invoice(invoiceId, new Date(), items, totalAmount);
+
+    }
 }
