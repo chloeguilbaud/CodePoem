@@ -12,7 +12,7 @@
     * [Pourquoi ce projet ?](#pourquoi-ce-projet-)
     * [Qu’allez-vous trouver ici ?](#quallez-vous-trouver-ici-)
     * [Vos premiers pas 🛠️](#vos-premiers-pas-)
-    * [Versions TODO](#versions-todo)
+    * [Versions](#versions)
   * [Installation et Exécution](#installation-et-exécution)
     * [Prérequis](#prérequis)
     * [Installation](#installation)
@@ -199,7 +199,7 @@ Ce projet est développé en **Java** avec les frameworks et outils suivants :
 - **Maven** : pour la gestion des dépendances et le cycle de vie du projet.
 - **Spring Boot** : pour simplifier le développement d'applications basées sur Spring, notamment grâce à ses fonctionnalités comme l'injection de dépendances, la gestion des configurations, et les démarrages rapides.
 
-### Versions TODO
+### Versions
 
 - Java : `23`
 - Maven : `4.0.O`
@@ -236,7 +236,7 @@ Assures toi d'avoir les éléments suivants installés sur votre machine :
 
 ### Exécution
 
-1. **Lancer l'application : TODO**
+1. **Lancer l'application :**
    Avec Maven, vous pouvez exécuter l'application directement en utilisant le plugin Spring Boot :
 
     ```bash
@@ -482,9 +482,7 @@ Prépare-toi à mettre les mains dans le code et à réfléchir à la structure 
 
 # 🪶 Passer à la pratique - exercice concret
 
-Pour chaque étape, je t’invite vivement à té référer à la cheatsheet et pour rappel tu trouveras une proposition d’implementation dans le package : TODO
-
-Et tout le code source des résultats dans le dossier TODO du projet
+Pour chaque étape, je t’invite vivement à té référer à la cheatsheet et pour rappel tu trouveras une proposition d’implementation dans le package : `billing.implementation.exemple`. 
 
 ## **Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**
 
@@ -1114,6 +1112,8 @@ En architecture hexagonale :
 >**Retrouve une proposition d'implémentation complète dans le package `billing.implementation.exemple` du projet.**
 > 
 > **Et ci-dessous des explications étapes par étapes ;)**
+> 
+> Il se peut que certains exemples ici diffère du code que vous trouverez dans le projet. Il s'agit de différents exemples d'implémentation.
 
 ## Étape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité (Strategic Design)
 
@@ -1746,6 +1746,11 @@ void shouldCreateAndRetrieveInvoice() {
 
 ✅ Ce test valide que le système complet fonctionne **sans infrastructure lourde (DB réelle)**.
 
+# 🪶 Evolutions
+- Documentation théorique events de domaine 
+- Exercice pratique théorique events de domaine
+- Implémentation des events de domaine 
+- Mise en place de tests unitaires
 
 # 🪶 **Des questions ? Des retours ?**
 
