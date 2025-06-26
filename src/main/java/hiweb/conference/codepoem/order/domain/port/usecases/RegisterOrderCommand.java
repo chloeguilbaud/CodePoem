@@ -7,7 +7,8 @@ public class RegisterOrderCommand implements Command {
     private final int clientId;
     private final int hiShoeReference;
 
-    public RegisterOrderCommand(int clientId, int hiShoeReference) {
+    public RegisterOrderCommand(int clientId, int hiShoeReference)
+    {
         this.clientId = clientId;
         this.hiShoeReference = hiShoeReference;
     }

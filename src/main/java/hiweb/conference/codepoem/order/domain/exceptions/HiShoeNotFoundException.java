@@ -1,4 +1,4 @@
-package hiweb.conference.codepoem.order.domain.port.repositories;
+package hiweb.conference.codepoem.order.domain.exceptions;
 
 public class HiShoeNotFoundException extends Exception {
 

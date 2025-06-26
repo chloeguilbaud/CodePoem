@@ -1,4 +1,4 @@
-package hiweb.conference.codepoem.order.domain.model.exceptions;
+package hiweb.conference.codepoem.order.domain.exceptions;
 
 public class InvalidShoeSizeException  extends Exception {
 

@@ -1,4 +1,4 @@
-package hiweb.conference.codepoem.order.domain.model.events;
+package hiweb.conference.codepoem.order.domain.events;
 
 import java.util.UUID;
 

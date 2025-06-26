@@ -1,5 +1,7 @@
 package hiweb.conference.codepoem.order.domain.model;
 
+import hiweb.conference.codepoem.order.domain.exceptions.InvalidShoeSizeException;
+
 public class HiShoe {
 
     private int reference;
@@ -7,11 +9,11 @@ public class HiShoe {
     private HISHOE_COLOR color;
     private float size;
 
-    public HiShoe(int reference, HISHOE_MODEL model, HISHOE_COLOR color, float size) {
+    public HiShoe(int reference, HISHOE_MODEL model, HISHOE_COLOR color, float size) throws InvalidShoeSizeException {
         this.reference = reference;
         this.model = model;
         this.color = color;
-        if (!validSize(size)) throw new InvalidShoeSizeException("La taille de chaussure doit être un nombre entier ou une demi-pointure (ex: 42, 42.5).");
+        if (!validSize(size)) throw new InvalidShoeSizeException(reference);
         this.size = size;
     }
 

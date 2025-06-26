@@ -1,11 +1,7 @@
 package hiweb.conference.codepoem.order.infrastructure.repositories;
 
 import hiweb.conference.codepoem.order.domain.model.Client;
-import hiweb.conference.codepoem.order.domain.model.HISHOE_COLOR;
-import hiweb.conference.codepoem.order.domain.model.HISHOE_MODEL;
-import hiweb.conference.codepoem.order.domain.model.HiShoe;
 import hiweb.conference.codepoem.order.domain.port.repositories.ClientRepository;
-import hiweb.conference.codepoem.order.domain.port.repositories.HiShoeNotFoundException;
 
 import java.util.HashMap;
 
