@@ -1,4 +1,4 @@
-package order.app.controllers;
+package order.application.controllers;
 
 import order.domain.exceptions.HiShoeNotFoundException;
 import order.domain.port.usecases.RegisterOrderCommand;

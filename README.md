@@ -264,7 +264,7 @@ Dans cet exemple, nous avons simplifié les choses en définissant trois sous-do
 
 1. **Order (Gestion des commandes)** :
     - Ce sous-domaine traite de la création et de l'enregistrement des commandes de chaussures.
-    - Il inclut des entités comme **Order** (commande), avec des **events** comme `OrderHasBeenCreated`, et des services métier comme `CreateOrderService` pour la gestion des commandes. TODO vérification qu’on a bien un event ORDERHASBEENCREATED
+    - Il inclut des entités comme **Order** (commande), avec des **events** comme `OrderHasBeenCreated`, et des services métier comme `CreateOrderService` pour la gestion des commandes.
 2. **Facturation (Billing)** :
     - Ce sous-domaine est responsable de la génération et de l'enregistrement des factures liées aux commandes passées par les clients.
     - Bien que ce sous-domaine ne soit pas encore implémenté dans cet exemple, il pourrait inclure des services comme **`InvoiceService`** et des entités comme **`Invoice`**.
@@ -297,15 +297,13 @@ L'application est construite de manière à séparer les préoccupations liées 
 
 - **DDD – Domain-Driven Design** : Comprendre le domaine métier, les modèles riches, les Use Cases, et la langue d’ubiquité.
 
-Illustration TODO
+![codepoeme-illustration-ddd.png](doc/image/codepoeme-illustration-ddd.png)
 
 - **Architecture hexagonale** : Isolation de la logique métier, ports et adaptateurs, séparation des préoccupations entre domaine et infrastructure.
 
-Illustration TODO
+![codepoeme-illustration-archihexa.png](doc/image/codepoeme-illustration-archihexa.png)
 
 Ces ressources sont conçues pour prolonger votre apprentissage et vous encourager à expérimenter avec le code. Si vous avez des questions ou souhaitez échanger des idées, je suis toujours ravie de discuter — connectez-moi sur [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/) !
-
-TODO LINKS
 
 # **Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale**
 
@@ -313,10 +311,8 @@ Ce projet est structuré selon les principes du **DDD** et de l’**architecture
 
 Voici une description des principaux packages :
 
-TODO - vérification répo conhérent avec cette description
-
 ```markdown
-📦 hiweb.conference.codepoem
+📦 hiweb.codepoem
 └── 📦 order
     ├── 📂 domain                    # Cœur métier (Domain)
     │   ├── 📂 model                 # Modèles du domaine
@@ -326,7 +322,7 @@ TODO - vérification répo conhérent avec cette description
     │   │   ├── 📄 HiShoe_MODEL.java     # Value Object pour le modèle
     │   │   └── 📄 Order.java            # Aggregate Root pour les commandes
     │   │
-    │   ├── 📂 event                 # Événements de domaine
+    │   ├── 📂 events                 # Événements de domaine
     │   │   └── 📄 OrderHasBeenCreated.java # Événement déclenché lorsqu'une commande est créée
     │   │
     │   ├── 📂 exception             # Exceptions du domaine
@@ -367,7 +363,7 @@ TODO - vérification répo conhérent avec cette description
 
 ```
 
-### **1. `order/domain` : Le Cœur du Domaine Métier**
+### 1. `order/domain` : Le Cœur du Domaine Métier
 
 C’est ici que réside toute la **logique métier**. Cette couche est **indépendante des technologies** et représente les règles, concepts et invariants propres à la boutique HiShoes.
 
@@ -397,7 +393,7 @@ C’est ici que réside toute la **logique métier**. Cette couche est **indépe
 - Cette couche se concentre sur le **domaine métier**.
 - Les modèles sont riches en comportement, favorisant un code **orienté métier** et non centré sur les données.
 
-### **2. `order/application` : Les Cas d’Utilisation**
+### 2. `order/application` : Les Cas d’Utilisation
 
 Ce package expose les **cas d’utilisation** qui traduisent les intentions métier en actions concrètes.
 
@@ -411,8 +407,9 @@ Ce package expose les **cas d’utilisation** qui traduisent les intentions mét
 
 - Cette couche représente le **Driver Side** (ou côté entrant).
 - Elle orchestre les interactions entre l’utilisateur et la logique métier via des **ports**.
+- Application du pattern Command/Query.
 
-### **3. `order/infrastructure` : Les Adaptateurs Techniques**
+### 3. `order/infrastructure` : Les Adaptateurs Techniques
 
 Cette couche gère les aspects techniques et l’intégration avec les systèmes externes.
 
@@ -426,18 +423,18 @@ Cette couche gère les aspects techniques et l’intégration avec les systèmes
 **Lien avec les principes de l’architecture hexagonale** :
 
 - Cette couche représente le **Driven Side** (ou côté sortant).
-- Les adaptateurs techniques implémentent les interfaces définies dans le domaine (`ClientRepo`, `OrderRepo`) pour garantir une indépendance vis-à-vis des technologies.
+- Les adaptateurs techniques implémentent les interfaces définies dans le domaine (`ClientRepository`, `OrderRepository` et `HiShoeRepository`) pour garantir une indépendance vis-à-vis des technologies.
 
-### **4. Packages Vides : Préparation pour Facturation et Livraison**
+### 4. Packages Vides : Préparation pour Facturation et Livraison
 
-- **`order/facturation`** et **`order/livraison`** sont des **contextes potentiels** à développer.
+- **`order/billing`** et **`order/shipping`** sont des **contextes potentiels** à développer.
 - Chacun de ces contextes pourrait devenir un **Bounded Context** distinct avec ses propres modèles métier, ports, et adaptateurs.
 
 **Lien avec les principes DDD** :
 
 - La séparation en contextes permet de respecter les **Bounded Contexts** et d’éviter un modèle global trop complexe.
 
-### **Principes Clés en Action**
+### Principes Clés en Action
 
 1. **Séparation des préoccupations** :
     - Le domaine métier est **isolé** des détails techniques.
