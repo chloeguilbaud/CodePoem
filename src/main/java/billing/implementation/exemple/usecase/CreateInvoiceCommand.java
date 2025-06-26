@@ -1,24 +1,30 @@
 package billing.implementation.exemple.usecase;
 
+import billing.implementation.exemple.domain.model.Client;
+import billing.implementation.exemple.domain.model.HiShoe;
+
+import java.util.List;
+
 /**
  * Commande utilisée pour créer une facture.
  * Elle encapsule les données nécessaires à l'exécution du cas d'utilisation CreateInvoiceUseCase.
  */
 public class CreateInvoiceCommand {
-    private final String clientId;
-    private final double amount;
 
-    public CreateInvoiceCommand(String clientId, double amount) {
-        this.clientId = clientId;
-        this.amount = amount;
+    private final Client client;
+    private final List<HiShoe> products;
+
+    public CreateInvoiceCommand(Client client, List<HiShoe> products) {
+        this.client = client;
+        this.products = products;
     }
 
-    public String getClientId() {
-        return clientId;
+    public Client getClient() {
+        return client;
     }
 
-    public double getAmount() {
-        return amount;
+    public List<HiShoe> getProducts() {
+        return products;
     }
 }
 

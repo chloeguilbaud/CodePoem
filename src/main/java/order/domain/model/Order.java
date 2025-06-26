@@ -1,17 +1,18 @@
 package order.domain.model;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Order {
 
     private UUID id;
     private Client client;
-    private HiShoe products;
+    private HiShoe product;
 
     public Order(UUID id, Client client, HiShoe product) {
         this.id = id;
         this.client = client;
-        this.products = product;
+        this.product = product;
     }
 
     public UUID getId() {
@@ -22,8 +23,8 @@ public class Order {
         return client;
     }
 
-    public HiShoe getProducts() {
-        return products;
+    public HiShoe getProduct() {
+        return product;
     }
 
 }

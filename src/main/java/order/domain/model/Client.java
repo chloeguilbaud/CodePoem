@@ -31,4 +31,7 @@ public class Client {
         return isLoyal;
     }
 
+    public int getId() {
+        return id;
+    }
 }

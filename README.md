@@ -1,10 +1,14 @@
 # Quand le code devient poésie...
 
+⏰ Temps de lecture théorique estimé : 30 min
+
+⏰ Temps d'exercice pratique estimé : 1h30
+
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
   * [Contexte de ce répo](#contexte-de-ce-répo)
     * [Ressources utiles](#ressources-utiles)
-    * [**Des questions ? Des retours ?**](#des-questions--des-retours-)
+    * [Des questions ? Des retours ?](#des-questions--des-retours-)
     * [Pourquoi ce projet ?](#pourquoi-ce-projet-)
     * [Qu’allez-vous trouver ici ?](#quallez-vous-trouver-ici-)
     * [Vos premiers pas 🛠️](#vos-premiers-pas-)
@@ -19,21 +23,21 @@
     * [Répartition par rôle vs par fonctionnalité](#répartition-par-rôle-vs-par-fonctionnalité)
     * [Concepts de DDD et Architecture Hexagonale](#concepts-de-ddd-et-architecture-hexagonale)
     * [Concepts abordés :](#concepts-abordés-)
-* [**Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale**](#organisation-du-code--explorer-les-concepts-clés-du-ddd-et-de-larchitecture-hexagonale)
-    * [**1. `order/domain` : Le Cœur du Domaine Métier**](#1-orderdomain--le-cœur-du-domaine-métier)
-    * [**2. `order/application` : Les Cas d’Utilisation**](#2-orderapplication--les-cas-dutilisation)
-    * [**3. `order/infrastructure` : Les Adaptateurs Techniques**](#3-orderinfrastructure--les-adaptateurs-techniques)
-    * [**4. Packages Vides : Préparation pour Facturation et Livraison**](#4-packages-vides--préparation-pour-facturation-et-livraison)
-    * [**Principes Clés en Action**](#principes-clés-en-action)
+* [🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale](#-organisation-du-code--explorer-les-concepts-clés-du-ddd-et-de-larchitecture-hexagonale)
+    * [1. `order/domain` : Le Cœur du Domaine Métier](#1-orderdomain--le-cœur-du-domaine-métier)
+    * [2. `order/application` : Les Cas d’Utilisation](#2-orderapplication--les-cas-dutilisation)
+    * [3. `order/infrastructure` : Les Adaptateurs Techniques](#3-orderinfrastructure--les-adaptateurs-techniques)
+    * [4. Packages Vides : Préparation pour Facturation et Livraison](#4-packages-vides--préparation-pour-facturation-et-livraison)
+    * [Principes Clés en Action](#principes-clés-en-action)
   * [Passer à la pratique : implémenter le domaine **`Facturation`** avec le DDD et l’Architecture Hexagonale](#passer-à-la-pratique--implémenter-le-domaine-facturation-avec-le-ddd-et-larchitecture-hexagonale)
     * [Objectifs pédagogiques](#objectifs-pédagogiques)
     * [Contexte du projet](#contexte-du-projet)
     * [À quoi t'attendre](#à-quoi-tattendre)
-* [Passage à la pratique - exercice concret](#passage-à-la-pratique---exercice-concret)
+* [🪶 Passer à la pratique - exercice concret](#-passer-à-la-pratique---exercice-concret)
   * [**Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**](#etape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
-    * [**Contexte**](#contexte)
-    * [**Pourquoi Strategic Design ?**](#pourquoi-strategic-design-)
-    * [**Définir le domaine et ses sous-domaines**](#définir-le-domaine-et-ses-sous-domaines)
+    * [Contexte](#contexte)
+    * [Pourquoi Strategic Design ?](#pourquoi-strategic-design-)
+    * [Définir le domaine et ses sous-domaines](#définir-le-domaine-et-ses-sous-domaines)
     * [**Objectif pédagogique**](#objectif-pédagogique)
     * [**Actions pratiques**](#actions-pratiques)
     * [**Concepts DDD impliqués**](#concepts-ddd-impliqués)
@@ -91,7 +95,7 @@
   * [**Étape finale : Assemblage et test de bout en bout**](#étape-finale--assemblage-et-test-de-bout-en-bout)
     * [**Contexte**](#contexte-6)
     * [**Objectif pédagogique**](#objectif-pédagogique-5)
-  * [**Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**](#résultat-attendu-ou-proposition-de-compréhension-du-domaine-métier-de-lentreprise)
+* [🪶 **Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**](#-résultat-attendu-ou-proposition-de-compréhension-du-domaine-métier-de-lentreprise)
   * [Étape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité (Strategic Design)](#étape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
   * [Étape 2 : Identifier les cas d’utilisation métier](#étape-2--identifier-les-cas-dutilisation-métier-1)
     * [**Cas d’utilisation identifiés pour HiShoes — Facturation**](#cas-dutilisation-identifiés-pour-hishoes--facturation)
@@ -138,7 +142,7 @@
     * [1️⃣ **Adaptateurs entrants : exposer les cas d’utilisation**](#1-adaptateurs-entrants--exposer-les-cas-dutilisation)
     * [2️⃣ **Assembler les ports et adaptateurs**](#2-assembler-les-ports-et-adaptateurs)
     * [3️⃣ **Écrire un test de bout en bout**](#3-écrire-un-test-de-bout-en-bout)
-* [**Des questions ? Des retours ?**](#des-questions--des-retours--1)
+* [🪶 **Des questions ? Des retours ?**](#-des-questions--des-retours-)
 <!-- TOC -->
 
 ## Contexte de ce répo
@@ -157,7 +161,7 @@ Parce que la connaissance seule ne suffit pas : c’est en pratiquant qu’on pr
 - [Article de blog](https://hiweb.fr/conference-quand-le-code-devient-poesie) : Retrouvez un récapitulatif complet, les actualités sur le sujet, et tous les supports de la conférence.
 - 👉 N’hésitez pas à forker le projet, à tester, à modifier et à partager vos idées : c’est en expérimentant qu’on apprend le mieux !
 
-### **Des questions ? Des retours ?**
+### Des questions ? Des retours ?
 
 Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou vos suggestions pour améliorer ce projet.
 
@@ -305,7 +309,7 @@ L'application est construite de manière à séparer les préoccupations liées 
 
 Ces ressources sont conçues pour prolonger votre apprentissage et vous encourager à expérimenter avec le code. Si vous avez des questions ou souhaitez échanger des idées, je suis toujours ravie de discuter — connectez-moi sur [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/) !
 
-# **Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale**
+# 🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale
 
 Ce projet est structuré selon les principes du **DDD** et de l’**architecture hexagonale**. Cette organisation a pour but de séparer les préoccupations (logique métier, infrastructure technique, etc.) pour rendre le code plus compréhensible, maintenable et extensible.
 
@@ -476,7 +480,7 @@ Au fur et à mesure de cet exercice, tu seras amené à implémenter des parties
 
 Prépare-toi à mettre les mains dans le code et à réfléchir à la structure du domaine. Cet exercice est une excellente occasion d’approfondir tes compétences en architecture logicielle et d’acquérir une compréhension solide des principes du DDD et de l'architecture hexagonale.
 
-# Passage à la pratique - exercice concret
+# 🪶 Passer à la pratique - exercice concret
 
 Pour chaque étape, je t’invite vivement à té référer à la cheatsheet et pour rappel tu trouveras une proposition d’implementation dans le package : TODO
 
@@ -484,7 +488,7 @@ Et tout le code source des résultats dans le dossier TODO du projet
 
 ## **Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**
 
-### **Contexte**
+### Contexte
 
 Tu viens d’intégrer une équipe qui développe le système de gestion des commandes et des factures pour la boutique en ligne **HiShoes**, spécialisée dans la vente de chaussures.
 
@@ -498,7 +502,7 @@ Ce langage commun :
 - guide la modélisation des concepts métier,
 - aligne la technologie avec les besoins réels de l’entreprise.
 
-### **Pourquoi Strategic Design ?**
+### Pourquoi Strategic Design ?
 
 Quand on construit une architecture en *Domain-Driven Design* (DDD), la première étape consiste à :
 
@@ -510,7 +514,7 @@ C’est ce qu’on appelle le **Strategic Design** :
 
 👉 Le but n’est pas de faire un consensus sur tout, mais que les membres concernés par un même sous-domaine parlent la même langue.
 
-### **Définir le domaine et ses sous-domaines**
+### Définir le domaine et ses sous-domaines
 
 - **Domaine** : sujet ou activité sur laquelle l’application est construite.
 - **Sous-domaine** : partie fonctionnelle spécifique du domaine.
@@ -529,14 +533,14 @@ C’est ce qu’on appelle le **Strategic Design** :
 
 👉 C’est un **processus itératif** : on ajuste au fur et à mesure que la compréhension du domaine évolue.
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Comprendre et définir les concepts métier essentiels pour établir une langue commune qui :
 
 - reflète fidèlement la réalité du domaine,
 - servira de socle à la modélisation et au code.
 
-### **Actions pratiques**
+### Actions pratiques
 
 💬 *Mets-toi dans la peau d’un développeur assistant à une réunion avec l’équipe Facturation.*
 
@@ -555,7 +559,7 @@ C’est ce qu’on appelle le **Strategic Design** :
 
 3️⃣ Conserve ces définitions comme référence. Elles guideront toute la suite (modèle, code, documentation).
 
-### **Concepts DDD impliqués**
+### Concepts DDD impliqués
 
 - **Langue d’ubiquité (Ubiquitous Language)** :
 
@@ -573,9 +577,9 @@ C’est ce qu’on appelle le **Strategic Design** :
     - identifier les concepts clés,
     - construire un modèle fidèle au réel.
 
-## **Étape 2 : Identifier les cas d’utilisation métier**
+## Étape 2 : Identifier les cas d’utilisation métier
 
-### **Contexte**
+### Contexte
 
 Maintenant que tu as participé à l’élaboration d’un vocabulaire partagé (la langue d’ubiquité), tu es prêt à t’intéresser aux **cas d’utilisation métier** du sous-domaine *Facturation*.
 
@@ -589,7 +593,7 @@ Les cas d’utilisation permettent de :
 
 Les cas d’utilisation sont les **scénarios concrets** qui traduisent les besoins métier en actions précises que le logiciel doit réaliser.
 
-### **Pourquoi identifier les cas d’utilisation dans une approche DDD ?**
+### Pourquoi identifier les cas d’utilisation dans une approche DDD ?
 
 En Domain-Driven Design :
 
@@ -603,7 +607,7 @@ En Domain-Driven Design :
 Imaginez que votre mission est de fabriquer un vélo simple et fonctionnel. Si vous commencez à y ajouter des moteurs, des GPS, et des ailes, vous finissez avec une fusée. Résultat ? Beaucoup d’efforts pour quelque chose de disproportionné et inutilisable par rapport au besoin initial. 🚲→🚀**
 >
 
-### **Exemple dans HiShoes — Sous-domaine Facturation**
+### Exemple dans HiShoes — Sous-domaine Facturation
 
 Dans le sous-domaine *Facturation*, grâce à la collaboration avec les experts métier, tu as identifié que le système doit :
 
@@ -615,7 +619,7 @@ Dans le sous-domaine *Facturation*, grâce à la collaboration avec les experts 
 
 Ils traduisent des actions réelles que l’entreprise effectue, et que ton logiciel doit permettre de réaliser.
 
-### **Objectif pédagogique de l’étape**
+### Objectif pédagogique de l’étape
 
 ✅ Savoir **repérer les cas d’utilisation à partir des échanges métier**.
 
@@ -623,7 +627,7 @@ Ils traduisent des actions réelles que l’entreprise effectue, et que ton logi
 
 ✅ Préparer le terrain pour modéliser les entités et les règles métiers (prochaine étape).
 
-### **Concepts DDD impliqués**
+### Concepts DDD impliqués
 
 - **Cas d’utilisation métier** : Ce sont les scénarios qui décrivent ce que le domaine doit permettre au métier de faire. Ils reflètent les objectifs métier, pas les détails techniques.
 - **Alignement métier-technique** : Les cas d’utilisation garantissent que le système est conçu **pour servir les objectifs réels de l’entreprise**.
@@ -817,12 +821,9 @@ Dans une architecture DDD :
 - Ton agrégat (par exemple `Invoice`) encapsule les règles métier principales.
 
 💡 **Prochaine étape : créer des services du domaine pour gérer la logique métier qui :**
-
-✅ n’a pas naturellement sa place dans une entité ou un agrégat,
-
-✅ concerne plusieurs objets du modèle,
-
-✅ représente des actions métier « de plus haut niveau ».
+- n’a pas naturellement sa place dans une entité ou un agrégat, 
+- concerne plusieurs objets du modèle, 
+- représente des actions métier « de plus haut niveau ».
 
 ### **Pourquoi créer des services de domaine en DDD ?**
 
@@ -857,7 +858,7 @@ En DDD :
 
 👉 Crée un service du domaine qui :
 
-1️⃣ prend une commande validée,
+1️⃣ qui implémente ton cas d'utilisation et prend une commande validée,
 
 2️⃣ génère une facture et la sauvegarde,
 
@@ -1102,7 +1103,11 @@ En architecture hexagonale :
 
 ✅ Valider le flux métier complet : **du client à la persistance, en passant par le domaine**.
 
-## **Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**
+# 🪶 **Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**
+
+>**Retrouve une proposition d'implémentation complète dans le package `billing.implementation.exemple` du projet.**
+> 
+> **Et ci-dessous des explications étapes par étapes ;)**
 
 ## Étape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité (Strategic Design)
 
@@ -1736,7 +1741,7 @@ void shouldCreateAndRetrieveInvoice() {
 ✅ Ce test valide que le système complet fonctionne **sans infrastructure lourde (DB réelle)**.
 
 
-# **Des questions ? Des retours ?**
+# 🪶 **Des questions ? Des retours ?**
 
 Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou vos suggestions pour améliorer ce projet.
 
