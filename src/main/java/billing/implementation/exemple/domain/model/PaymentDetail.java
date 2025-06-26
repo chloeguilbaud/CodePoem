@@ -10,9 +10,9 @@ public class PaymentDetail {
     private double amount;
     private Date paymentDate;
     private PaymentMethod paymentMethod;
-    private PayerDetails payerDetails;
+    private PayerInformations payerInformations;
 
-    public void PaymentDetail(double amount, Date paymentDate, PaymentMethod paymentMethod, PayerDetails payerDetails) {
+    public void PaymentDetail(double amount, Date paymentDate, PaymentMethod paymentMethod, PayerInformations payerInformations) {
         if (amount <= 0) {
             throw new InvalidPaymentDetailException("Amount must be positive.");
         }
@@ -24,7 +24,7 @@ public class PaymentDetail {
         if (Objects.isNull(paymentMethod)) throw new InvalidPaymentDetailException("Payment method is required");
         this.paymentMethod = paymentMethod;
 
-        this.payerDetails = payerDetails;
+        this.payerInformations = payerInformations;
     }
 
     public double getAmount() {
@@ -39,7 +39,7 @@ public class PaymentDetail {
         return paymentMethod;
     }
 
-    public PayerDetails getPayerDetails() {
-        return payerDetails;
+    public PayerInformations getPayerDetails() {
+        return payerInformations;
     }
 }

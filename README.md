@@ -2,7 +2,7 @@
 
 ⏰ Temps de lecture théorique estimé : 30 min
 
-⏰ Temps d'exercice pratique estimé : 1h30
+⏰ Temps d'exercice pratique estimé : 2h30
 
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
@@ -38,15 +38,15 @@
     * [Contexte](#contexte)
     * [Pourquoi Strategic Design ?](#pourquoi-strategic-design-)
     * [Définir le domaine et ses sous-domaines](#définir-le-domaine-et-ses-sous-domaines)
-    * [**Objectif pédagogique**](#objectif-pédagogique)
-    * [**Actions pratiques**](#actions-pratiques)
-    * [**Concepts DDD impliqués**](#concepts-ddd-impliqués)
-  * [**Étape 2 : Identifier les cas d’utilisation métier**](#étape-2--identifier-les-cas-dutilisation-métier)
-    * [**Contexte**](#contexte-1)
-    * [**Pourquoi identifier les cas d’utilisation dans une approche DDD ?**](#pourquoi-identifier-les-cas-dutilisation-dans-une-approche-ddd)
-    * [**Exemple dans HiShoes — Sous-domaine Facturation**](#exemple-dans-hishoes--sous-domaine-facturation)
-    * [**Objectif pédagogique de l’étape**](#objectif-pédagogique-de-létape)
-    * [**Concepts DDD impliqués**](#concepts-ddd-impliqués-1)
+    * [Objectif pédagogique](#objectif-pédagogique)
+    * [Actions pratiques](#actions-pratiques)
+    * [Concepts DDD impliqués](#concepts-ddd-impliqués)
+  * [Étape 2 : Identifier les cas d’utilisation métier](#étape-2--identifier-les-cas-dutilisation-métier)
+    * [Contexte](#contexte-1)
+    * [Pourquoi identifier les cas d’utilisation dans une approche DDD ?](#pourquoi-identifier-les-cas-dutilisation-dans-une-approche-ddd)
+    * [Exemple dans HiShoes — Sous-domaine Facturation](#exemple-dans-hishoes--sous-domaine-facturation)
+    * [Objectif pédagogique de l’étape](#objectif-pédagogique-de-létape)
+    * [Concepts DDD impliqués](#concepts-ddd-impliqués-1)
     * [**Actions pratiques**](#actions-pratiques-1)
     * [🎯 **Méthodologie pour identifier les cas d’utilisation**](#-méthodologie-pour-identifier-les-cas-dutilisation)
     * [**Pièges à éviter**](#pièges-à-éviter)
@@ -858,6 +858,9 @@ En DDD :
 
 👉 Crée un service du domaine qui :
 
+Avant de te lancer, prends le temps de réfléchir aux informations, dont ton service à avoir besoin pour transformer une commande en Facture.
+Dans l'étape suivante, nous ferons un peu de refactoring pour améliorer encore notre découpage des responsabilités.
+
 1️⃣ qui implémente ton cas d'utilisation et prend une commande validée,
 
 2️⃣ génère une facture et la sauvegarde,
@@ -986,6 +989,9 @@ Ces informations permettront à l’utilisateur de :
 2️⃣ `PayInvoiceCommand` + `PayInvoiceCommandHandler` (avec logique pour ajouter un paiement).
 
 3️⃣ `GetInvoiceByIdQuery` + `QueryHandler`.
+
+> Un Handler peut aussi et est souvent appelé UseCase. On peut tout à fait imaginer renommer `CreateInvoiceCommandHandler` en `CreateInvoiceCommandUseCase`.
+
 
 👉 Écris un test :
 

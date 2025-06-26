@@ -12,15 +12,17 @@ public class Invoice {
 
     private final UUID invoiceId;
     private final Date issueDate;
-    private final List<InvoiceItem> itemList; // List of item descriptions
+    private final List<InvoiceLine> itemList; // List of item descriptions
     private double totalAmount;
     private double totalAmountPayed;
     private final Client client;
     private boolean isPaid;
     private final List<PaymentDetail> paiementDetail;
+    private InvoiceStatus status;
 
     // Constructor
-    public Invoice(UUID invoiceId, Date issueDate, List<InvoiceItem> itemList, Client client) throws InvalidInvoiceItemListException {
+    public Invoice(UUID invoiceId, Date issueDate, List<InvoiceLine> itemList, Client client, InvoiceStatus status) throws InvalidInvoiceItemListException {
+        this.status = status;
         this.checkData(itemList);
         this.client = client;
         this.invoiceId = invoiceId;
@@ -33,13 +35,13 @@ public class Invoice {
 
     private double calculateTotalAmount() {
         double invoiceTotal = 0;
-        for (InvoiceItem item : itemList) {
-            this.totalAmount += item.getHiShoeId().getPrice();
+        for (InvoiceLine item : itemList) {
+            this.totalAmount += item.getTotal();
         }
         return invoiceTotal;
     }
 
-    private void checkData(List<InvoiceItem> itemList) throws InvalidInvoiceItemListException {
+    private void checkData(List<InvoiceLine> itemList) throws InvalidInvoiceItemListException {
         // « une facture doit contenir au moins une ligne »,
         if (itemList == null || itemList.isEmpty()) {
             throw new InvalidInvoiceItemListException(invoiceId);
@@ -55,7 +57,7 @@ public class Invoice {
         return issueDate;
     }
 
-    public List<InvoiceItem> getItemList() {
+    public List<InvoiceLine> getItemList() {
         return itemList;
     }
 
@@ -70,14 +72,22 @@ public class Invoice {
     // Business logic: Pay the invoice
     // « la somme des paiements ne peut pas dépasser le montant dû »
     public void pay(PaymentDetail paymentDetail) {
+
         if (isPaid) {
             throw new IllegalStateException("Invoice already paid.");
         }
-        this.isPaid = true;
 
         if (this.totalAmountPayed + paymentDetail.getAmount() > this.totalAmount)
             throw new InvalidPaymentException(invoiceId);
+
         this.totalAmountPayed += paymentDetail.getAmount();
+        this.status = InvoiceStatus.PARTIALLY_PAID;
+
+        if (this.totalAmountPayed == this.totalAmount) {
+            this.isPaid = true;
+            this.status = InvoiceStatus.PAID;
+        }
+
         this.paiementDetail.add(paymentDetail);
 
     }
@@ -88,5 +98,9 @@ public class Invoice {
 
     public List<PaymentDetail> getPaiementDetail() {
         return paiementDetail;
+    }
+
+    public InvoiceStatus getStatus() {
+        return status;
     }
 }

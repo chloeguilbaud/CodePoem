@@ -8,13 +8,16 @@ import java.util.UUID;
 
 public class HiShoe {
 
-    private UUID hiShoeId;
+    private final UUID hiShoeId;
+    private final String referenceProduit;
     private final double price;
     private final HISHOE_MODEL model;
     private final HISHOE_COLOR color;
     private final double size;
 
-    public HiShoe(UUID hiShoeId, double price, String description, HISHOE_MODEL model, HISHOE_COLOR color, double size) throws InvalidHiShoePriceException {
+    public HiShoe(UUID hiShoeId, UUID hiShoeId1, String referenceProduit, double price, HISHOE_MODEL model, HISHOE_COLOR color, double size) throws InvalidHiShoePriceException {
+        this.hiShoeId = hiShoeId1;
+        this.referenceProduit = referenceProduit;
         this.model = model;
         this.color = color;
         this.size = size;
@@ -40,5 +43,9 @@ public class HiShoe {
 
     public double getSize() {
         return size;
+    }
+
+    public String getReferenceProduit() {
+        return referenceProduit;
     }
 }
