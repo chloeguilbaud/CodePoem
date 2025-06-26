@@ -1,4 +1,4 @@
-package billing.implementation.exemple.usecase;
+package billing.implementation.exemple.domain.usecase;
 
 /**
  * Interface représentant le cas d'utilisation pour payer une facture.

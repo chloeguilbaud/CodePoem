@@ -15,8 +15,8 @@ public class HiShoe {
     private final HISHOE_COLOR color;
     private final double size;
 
-    public HiShoe(UUID hiShoeId, UUID hiShoeId1, String referenceProduit, double price, HISHOE_MODEL model, HISHOE_COLOR color, double size) throws InvalidHiShoePriceException {
-        this.hiShoeId = hiShoeId1;
+    public HiShoe(UUID hiShoeId, String referenceProduit, double price, HISHOE_MODEL model, HISHOE_COLOR color, double size) throws InvalidHiShoePriceException {
+        this.hiShoeId = hiShoeId;
         this.referenceProduit = referenceProduit;
         this.model = model;
         this.color = color;

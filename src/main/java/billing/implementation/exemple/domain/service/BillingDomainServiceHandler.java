@@ -1,4 +1,4 @@
-package billing.implementation.exemple.service;
+package billing.implementation.exemple.domain.service;
 
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceItemListException;
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceListQuantityException;
@@ -7,7 +7,7 @@ import billing.implementation.exemple.domain.model.Invoice;
 import billing.implementation.exemple.domain.model.InvoiceLine;
 import billing.implementation.exemple.domain.model.InvoiceStatus;
 import billing.implementation.exemple.domain.port.repositories.InvoiceRepository;
-import billing.implementation.exemple.usecase.*;
+import billing.implementation.exemple.domain.usecase.*;
 
 import java.util.*;
 

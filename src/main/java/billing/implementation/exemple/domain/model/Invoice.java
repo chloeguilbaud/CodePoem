@@ -21,8 +21,7 @@ public class Invoice {
     private InvoiceStatus status;
 
     // Constructor
-    public Invoice(UUID invoiceId, Date issueDate, List<InvoiceLine> itemList, Client client, InvoiceStatus status) throws InvalidInvoiceItemListException {
-        this.status = status;
+    public Invoice(UUID invoiceId, Date issueDate, List<InvoiceLine> itemList, Client client) throws InvalidInvoiceItemListException {
         this.checkData(itemList);
         this.client = client;
         this.invoiceId = invoiceId;

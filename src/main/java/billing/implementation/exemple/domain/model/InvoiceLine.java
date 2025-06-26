@@ -20,7 +20,7 @@ public class InvoiceLine {
         this.productReference = productReference;
         this.pricePerUnit = pricePerUnit;
         this.quantity = quantity;
-        this.total = 0;
+        this.total = pricePerUnit * quantity;
     }
 
     public String getDescription() {

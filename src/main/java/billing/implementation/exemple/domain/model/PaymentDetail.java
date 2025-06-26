@@ -12,7 +12,7 @@ public class PaymentDetail {
     private PaymentMethod paymentMethod;
     private PayerInformations payerInformations;
 
-    public void PaymentDetail(double amount, Date paymentDate, PaymentMethod paymentMethod, PayerInformations payerInformations) {
+    public PaymentDetail(double amount, Date paymentDate, PaymentMethod paymentMethod, PayerInformations payerInformations) {
         if (amount <= 0) {
             throw new InvalidPaymentDetailException("Amount must be positive.");
         }

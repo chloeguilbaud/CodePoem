@@ -1,4 +1,4 @@
-package billing.implementation.exemple.usecase;
+package billing.implementation.exemple.domain.usecase;
 
 import billing.implementation.exemple.domain.model.Client;
 import billing.implementation.exemple.domain.model.HiShoe;
