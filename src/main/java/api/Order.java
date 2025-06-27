@@ -1,10 +1,10 @@
-package api.domain;
+package api;
 
 public class Order {
 
-    public String mail;
-    public int quantity;
-    public String address;
+    public final String mail;
+    public final int quantity;
+    public final String address;
 
     public Order(String mail, int quantity, String address) {
         this.mail = mail;

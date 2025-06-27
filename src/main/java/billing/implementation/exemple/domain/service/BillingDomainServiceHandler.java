@@ -2,10 +2,7 @@ package billing.implementation.exemple.domain.service;
 
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceItemListException;
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceListQuantityException;
-import billing.implementation.exemple.domain.model.HiShoe;
-import billing.implementation.exemple.domain.model.Invoice;
-import billing.implementation.exemple.domain.model.InvoiceLine;
-import billing.implementation.exemple.domain.model.InvoiceStatus;
+import billing.implementation.exemple.domain.model.*;
 import billing.implementation.exemple.domain.port.repositories.InvoiceRepository;
 import billing.implementation.exemple.domain.usecase.*;
 
@@ -41,8 +38,7 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, PayInv
         }
         Invoice invoice = new Invoice(
                 UUID.randomUUID(), new Date(),
-                invoiceLines, command.getClient(),
-                InvoiceStatus.ISSUED);
+                invoiceLines, command.getClient());
 
         // et la sauvegarde,
         invoiceRepository.save(invoice);

@@ -1,22 +1,16 @@
-package order.domain.model;
+package order.domain.port.usecases;
 
-import java.util.UUID;
+public class CreateClientCommand {
 
-public class Client {
-
-    private final UUID id;
     private final String firstName;
     private final String lastName;
     private final String email;
-    private final boolean isLoyal;
     private final String address;
 
-    public Client(UUID id, String firstName, String lastName, String email, boolean isLoyal, String address) {
-        this.id = id;
+    public CreateClientCommand(String firstName, String lastName, String email, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.isLoyal = isLoyal;
         this.address = address;
     }
 
@@ -30,14 +24,6 @@ public class Client {
 
     public String getEmail() {
         return email;
-    }
-
-    public boolean isLoyal() {
-        return isLoyal;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getAddress() {
