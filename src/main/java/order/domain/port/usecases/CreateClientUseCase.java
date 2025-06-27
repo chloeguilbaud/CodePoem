@@ -4,7 +4,9 @@ import order.domain.exceptions.HiShoeNotFoundException;
 import order.domain.model.Client;
 import order.domain.port.repositories.ClientRepository;
 import order.domain.service.CreateClientService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateClientUseCase {
 
     private CreateClientService createClientService;

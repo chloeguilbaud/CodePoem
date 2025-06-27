@@ -3,7 +3,10 @@ package billing.implementation.exemple.domain.usecase;
 import billing.implementation.exemple.domain.model.Client;
 import billing.implementation.exemple.domain.model.HiShoe;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Commande utilisée pour créer une facture.
@@ -11,15 +14,15 @@ import java.util.List;
  */
 public class CreateInvoiceCommand {
 
-    private final int client;
+    private final UUID client;
     private final List<HiShoe> products;
 
-    public CreateInvoiceCommand(Client client, List<HiShoe> products) {
-        this.client = client;
+    public CreateInvoiceCommand(UUID clientId, List<HiShoe> products) {
+        this.client = clientId;
         this.products = products;
     }
 
-    public Client getClient() {
+    public UUID getClient() {
         return client;
     }
 

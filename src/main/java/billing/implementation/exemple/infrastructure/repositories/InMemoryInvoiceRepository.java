@@ -6,9 +6,11 @@ import billing.implementation.exemple.domain.model.*;
 import billing.implementation.exemple.domain.port.repositories.InvoiceRepository;
 import order.domain.model.HISHOE_COLOR;
 import order.domain.model.HISHOE_MODEL;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class InMemoryInvoiceRepository implements InvoiceRepository {
 
     private final HashMap<UUID, Invoice> invoices;
@@ -24,7 +26,7 @@ public class InMemoryInvoiceRepository implements InvoiceRepository {
         double total1 = itemList1.stream().mapToDouble(InvoiceLine::getTotal).sum();
         PayerInformations payer1 = new PayerInformations("John", "Doe", "john.doe@example.com", "123 Main Street, Paris");
         PaymentDetail payment1 = new PaymentDetail(100.0, new Date(), PaymentMethod.CREDIT_CARD, payer1);
-        UUID invoiceId1 = UUID.randomUUID();
+        UUID invoiceId1 = UUID.fromString("11111111-1111-1111-1111-111111111111");
         Invoice invoice1 = new Invoice(
                 invoiceId1,
                 new Date(),

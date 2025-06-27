@@ -2,18 +2,20 @@ package order.domain.port.usecases;
 
 import common.Command;
 
+import java.util.UUID;
+
 public class RegisterOrderCommand implements Command {
 
-    private final int clientId;
+    private final UUID clientId;
     private final int hiShoeReference;
 
-    public RegisterOrderCommand(int clientId, int hiShoeReference)
+    public RegisterOrderCommand(UUID clientId, int hiShoeReference)
     {
         this.clientId = clientId;
         this.hiShoeReference = hiShoeReference;
     }
 
-    public int getClientId() {
+    public UUID getClientId() {
         return clientId;
     }
 

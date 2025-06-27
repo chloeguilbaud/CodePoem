@@ -2,9 +2,11 @@ package order.domain.service;
 
 import order.domain.model.Client;
 import order.domain.model.Order;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class CreateClientService {
 
     public Client createClient(String firstName, String lastName, String email, String address) {

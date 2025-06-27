@@ -3,15 +3,24 @@ package billing.implementation.exemple.domain.service;
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceItemListException;
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceListQuantityException;
 import billing.implementation.exemple.domain.model.*;
+import billing.implementation.exemple.domain.port.repositories.InvoiceClientRepository;
 import billing.implementation.exemple.domain.port.repositories.InvoiceRepository;
 import billing.implementation.exemple.domain.usecase.*;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-public class BillingDomainServiceHandler implements CreateInvoiceUseCase, PayInvoiceUseCase, GetInvoiceByIdUseCase {
+@Service
+public class BillingDomainServiceHandler implements CreateInvoiceUseCase, GetInvoiceByIdUseCase {
 
 
     private InvoiceRepository invoiceRepository;
+    private InvoiceClientRepository clientRepository;
+
+    public BillingDomainServiceHandler(InvoiceRepository invoiceRepository, InvoiceClientRepository clientRepository) {
+        this.invoiceRepository = invoiceRepository;
+        this.clientRepository = clientRepository;
+    }
 
     @Override
     public void handle(CreateInvoiceCommand command) throws InvalidInvoiceItemListException, InvalidInvoiceListQuantityException {
@@ -19,7 +28,7 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, PayInv
 
 
 
-        // génère une facture
+        // génèrer une facture
         HashMap<String, HiShoe> orderProductList = new HashMap<>();
 
         List<InvoiceLine> invoiceLines = new ArrayList<>();
@@ -36,9 +45,10 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, PayInv
                             1
                     ));
         }
+        Client client = clientRepository.findById(command.getClient());
         Invoice invoice = new Invoice(
                 UUID.randomUUID(), new Date(),
-                invoiceLines, command.getClient());
+                invoiceLines, client);
 
         // et la sauvegarde,
         invoiceRepository.save(invoice);
@@ -53,17 +63,6 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, PayInv
             }
         }
         lines.add(newLine); // pas de doublon, on ajoute
-    }
-
-    @Override
-    public void handle(PayInvoiceCommand command) {
-        // Ajouter un paiement à la facture
-        Invoice invoice = command.getInvoice();
-        invoice.pay(command.getPaymentDetail());
-
-        // Persister l'information en base de donneés
-        invoiceRepository.save(invoice);
-
     }
 
     @Override

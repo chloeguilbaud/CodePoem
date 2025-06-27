@@ -12,24 +12,25 @@ import order.domain.exceptions.HiShoeNotFoundException;
 import order.domain.port.repositories.HiShoeRepository;
 import order.domain.port.repositories.OrderRepository;
 import order.domain.service.CreateOrderService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RegisterOrderUseCase {
 
     private ClientRepository clientRepository;
     private HiShoeRepository hiShoeRepository;
     private CreateOrderService createOrderService;
     private OrderRepository orderRepository;
-    private EventDispatcher eventDispatcher;
+    //private EventDispatcher eventDispatcher;
     private CreateInvoiceUseCase createInvoiceUseCase;
 
     public RegisterOrderUseCase(ClientRepository clientRepository, HiShoeRepository hiShoeRepository,
-                                CreateOrderService createOrderService, OrderRepository orderRepository,
-                                EventDispatcher eventDispatcher) {
+                                CreateOrderService createOrderService, OrderRepository orderRepository) {
         this.clientRepository = clientRepository;
         this.hiShoeRepository = hiShoeRepository;
         this.createOrderService = createOrderService;
         this.orderRepository = orderRepository;
-        this.eventDispatcher = eventDispatcher;
+        //this.eventDispatcher = eventDispatcher;
     }
 
     public void handle(RegisterOrderCommand registerOrderCommand) throws HiShoeNotFoundException {
@@ -48,7 +49,7 @@ public class RegisterOrderUseCase {
 
         // dire à tout le monde que les hiShoes c'est cool et que les gens en commande !
         // TODO : gestion des events dans le domaine (mais ça sera pour l'année prochaine, prochaine conf? v2?)
-        this.eventDispatcher.dispatch(new OrderHasBeenCreated(order.getId()));
+        // this.eventDispatcher.dispatch(new OrderHasBeenCreated(order.getId()));
         // En attendant on va le faire à la mano ici
         // A la commande génération d'une facture
         // this.createInvoiceUseCase.handle(new CreateInvoiceCommand(order.getClient().getId(), order.getProduct().getReference());

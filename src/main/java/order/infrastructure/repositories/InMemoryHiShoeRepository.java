@@ -6,9 +6,11 @@ import order.domain.model.HiShoe;
 import order.domain.exceptions.InvalidShoeSizeException;
 import order.domain.exceptions.HiShoeNotFoundException;
 import order.domain.port.repositories.HiShoeRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 
+@Repository
 public class InMemoryHiShoeRepository implements HiShoeRepository {
 
     private final HashMap<Integer, HiShoe> hiShoes;

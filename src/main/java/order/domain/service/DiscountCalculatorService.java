@@ -1,7 +1,9 @@
 package order.domain.service;
 
 import order.domain.model.Client;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DiscountCalculatorService {
 
     /**

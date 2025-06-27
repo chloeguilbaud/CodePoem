@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class OrderController {
+public class HelloOrderController {
 
     @GetMapping("/order")
     @ResponseStatus(HttpStatus.CREATED)
@@ -16,7 +16,7 @@ public class OrderController {
             @RequestParam(value = "quantity") int quantity,
             @RequestParam(value = "address") String address
     ) {
-        Order order = new api.Order(mail, quantity, address);
+        HelloOrder order = new HelloOrder(mail, quantity, address);
         return String.format("Commande de %s pairs de hiShoes de la part de %s. " +
                 "Adresse de livraison : %s.",
                 order.quantity, order.mail, order.address);

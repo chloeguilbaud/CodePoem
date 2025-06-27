@@ -36,7 +36,7 @@ public class Client {
         return isLoyal;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
