@@ -6,7 +6,7 @@
 
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
-  * [**Contexte de ce répo**](#contexte-de-ce-répo)
+  * [Contexte de ce répo](#contexte-de-ce-répo)
     * [**Ressources utiles**](#ressources-utiles)
     * [**Des questions ? Des retours ?**](#des-questions--des-retours-)
     * [**Pourquoi ce projet ?**](#pourquoi-ce-projet-)
@@ -35,7 +35,7 @@
     * [Contexte du projet](#contexte-du-projet)
     * [À quoi t'attendre](#à-quoi-tattendre)
 * [**🪶 Passer à la pratique - exercice concret**](#-passer-à-la-pratique---exercice-concret)
-  * [**Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**](#etape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
+  * [Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design](#etape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
     * [Contexte](#contexte)
     * [Pourquoi Strategic Design ?](#pourquoi-strategic-design-)
     * [Définir le domaine et ses sous-domaines](#définir-le-domaine-et-ses-sous-domaines)
@@ -147,7 +147,7 @@
 * [**🪶 Des questions ? Des retours ?**](#-des-questions--des-retours-)
 <!-- TOC -->
 
-## **Contexte de ce répo**
+## Contexte de ce répo
 
 Dans le monde de la technologie, maîtriser quelques concepts clés peut faire toute la différence entre un bon·ne développeur·euse et un·e développeur·euse exceptionnel·le. Les design patterns sont ces concepts essentiels qui vous permettront de produire des applications de haute qualité, faciles à maintenir et à faire évoluer. Vous n’avez pas besoin de connaître tous les design patterns. Un ou deux peuvent suffire, et aujourd’hui je vous propose de découvrir l’architecture hexagonale et le Domain Driven Design.
 
@@ -514,7 +514,7 @@ Prépare-toi à mettre les mains dans le code et à réfléchir à la structure 
 
 Pour chaque étape, je t’invite vivement à té référer à la cheatsheet et pour rappel tu trouveras une proposition d’implementation dans le package : `billing.implementation.exemple`. 
 
-## **Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**
+## Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design
 
 ### Contexte
 
@@ -1786,6 +1786,6 @@ void shouldCreateAndRetrieveInvoice() {
 
 Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou vos suggestions pour améliorer ce projet.
 
-📧 **Contactez-moi** : Chloé Guilbaud
+📧 **Contactez-moi** : [chloe@hiweb.fr](mailto:chloe@hiweb.fr)
 
 🔗 **Retrouvez-moi sur LinkedIn** : [Chloé Guilbaud](https://www.linkedin.com/in/chloeguilbaud/)
