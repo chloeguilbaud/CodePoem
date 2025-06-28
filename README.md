@@ -17,8 +17,6 @@ Vous pouvez l'utiliser, le modifier et le partager dans un cadre **non commercia
 
 **Merci de respecter ces conditions afin de soutenir le travail de création et de transmission 😊**
 
----
-
 🇬🇧 This project (code + educational content) is licensed under [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).  
 You may use, modify, and share it for **non-commercial** purposes only, provided that you:
 - fork this repository,
@@ -30,9 +28,12 @@ You may use, modify, and share it for **non-commercial** purposes only, provided
 
 **Thank you for respecting these conditions and supporting this work of creation and knowledge sharing 😊**
 
+---
+
 
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
+* [**📄 Licence / License**](#-licence--license)
   * [Contexte de ce répo](#contexte-de-ce-répo)
     * [**Ressources utiles**](#ressources-utiles)
     * [**Des questions ? Des retours ?**](#des-questions--des-retours-)
