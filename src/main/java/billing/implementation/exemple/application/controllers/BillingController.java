@@ -25,36 +25,31 @@ public class BillingController {
     private GetInvoiceByIdUseCase getInvoiceByIdUseCase;
     private ClientRepository clientRepository;
 
-    /*@PostMapping("/invoice")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity createInvoice(
-            @RequestBody InvoiceRequest request
-    ) {
-
-        *//*UUID clientId = request.getClientId();
-        HashMap<Integer, Integer> products = request.getProducts();
-
-        try {
-            createInvoiceUseCase.handle(new CreateInvoiceCommand(clientId, products));
-            Client client = clientRepository.get(clientId);
-            return ResponseEntity.status(HttpStatus.CREATED).body(
-                    String.format("Facturation de hiShoes pour %s %s \n%s.",
-                            client.getFirstName(), client.getLastName(), products)
-            );
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
-                    String.format("Facturation impossible : %s", e.getMessage())
-            );
-        }*//*
+    public BillingController(GetInvoiceByIdUseCase getInvoiceByIdUseCase, ClientRepository clientRepository) {
+        this.getInvoiceByIdUseCase = getInvoiceByIdUseCase;
+        this.clientRepository = clientRepository;
     }
-*/
+
+//    @PostMapping("/invoice")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public ResponseEntity createInvoice(
+//            @RequestBody InvoiceRequest request
+//    ) {
+//        // TODO
+//    }
+
+
     @GetMapping("/invoice")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Invoice getInvoice(
+    public ResponseEntity getInvoice(
             @RequestParam(value = "invoiceId") UUID invoiceId
     ) {
-        System.out.println("Invoice ID: " + invoiceId);
-        return getInvoiceByIdUseCase.handle(new InvoiceQuery(invoiceId));
+
+        Invoice invoice = getInvoiceByIdUseCase.handle(new InvoiceQuery(invoiceId));
+        return ResponseEntity.status(HttpStatus.CREATED).body(
+                String.format("Facture n' %s du client %s %s pour un montant total de %s.",
+                        invoice.getInvoiceId(), invoice.getClient().getName(),
+                        invoice.getClient().getSurname(), invoice.getTotalAmount())
+        );
     }
 
 }

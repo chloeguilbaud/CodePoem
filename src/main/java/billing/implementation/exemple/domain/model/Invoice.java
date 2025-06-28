@@ -27,17 +27,15 @@ public class Invoice {
         this.invoiceId = invoiceId;
         this.issueDate = issueDate;
         this.itemList = itemList;
-        this.totalAmount = calculateTotalAmount();
+        calculateTotalAmount();
         this.isPaid = false; // Default state is unpaid
         this.paiementDetails = new ArrayList<PaymentDetail>();
     }
 
-    private double calculateTotalAmount() {
-        double invoiceTotal = 0;
+    private void calculateTotalAmount() {
         for (InvoiceLine item : itemList) {
             this.totalAmount += item.getTotal();
         }
-        return invoiceTotal;
     }
 
     private void checkData(List<InvoiceLine> itemList) throws InvalidInvoiceItemListException {
