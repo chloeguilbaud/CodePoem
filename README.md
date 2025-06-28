@@ -251,6 +251,8 @@ Assures toi d'avoir les éléments suivants installés sur votre machine :
     
     ```
 
+### Jeux de données et tests
+
 
 ## Cas d'étude : Hi Shoes - "C'est pas beau, mais c'est pratique"
 
@@ -301,11 +303,11 @@ L'application est construite de manière à séparer les préoccupations liées 
 
 - **DDD – Domain-Driven Design** : Comprendre le domaine métier, les modèles riches, les Use Cases, et la langue d’ubiquité.
 
-![codepoeme-illustration-ddd.png](doc/image/codepoeme-illustration-ddd.png)
+![codepoeme-illustration-ddd.png](src/main/resources/doc/image/codepoeme-illustration-ddd.png)
 
 - **Architecture hexagonale** : Isolation de la logique métier, ports et adaptateurs, séparation des préoccupations entre domaine et infrastructure.
 
-![codepoeme-illustration-archihexa.png](doc/image/codepoeme-illustration-archihexa.png)
+![codepoeme-illustration-archihexa.png](src/main/resources/doc/image/codepoeme-illustration-archihexa.png)
 
 Ces ressources sont conçues pour prolonger votre apprentissage et vous encourager à expérimenter avec le code. Si vous avez des questions ou souhaitez échanger des idées, je suis toujours ravie de discuter — connectez-moi sur [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/) !
 

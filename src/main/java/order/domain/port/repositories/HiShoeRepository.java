@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface HiShoeRepository {
 
-    HiShoe get(int hiShoeReference) throws HiShoeNotFoundException;
+    HiShoe get(UUID hiShoeReference) throws HiShoeNotFoundException;
 
 }

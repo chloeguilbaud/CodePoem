@@ -15,9 +15,9 @@ import java.util.UUID;
 public class CreateInvoiceCommand {
 
     private final UUID client;
-    private final List<HiShoe> products;
+    private final HashMap<UUID, Integer> products;
 
-    public CreateInvoiceCommand(UUID clientId, List<HiShoe> products) {
+    public CreateInvoiceCommand(UUID clientId, HashMap<UUID, Integer> products) {
         this.client = clientId;
         this.products = products;
     }
@@ -26,7 +26,7 @@ public class CreateInvoiceCommand {
         return client;
     }
 
-    public List<HiShoe> getProducts() {
+    public HashMap<UUID, Integer> getProducts() {
         return products;
     }
 }

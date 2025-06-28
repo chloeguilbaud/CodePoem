@@ -26,7 +26,7 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity createOrder(
             @RequestParam(value = "clientId") UUID clientId,
-            @RequestParam(value = "hiShoeReference") int hiShoeReference
+            @RequestParam(value = "hiShoeReference") UUID hiShoeReference
     ) {
 
         // registerOrderUseCase.handle(clientId, hiShoeReference);

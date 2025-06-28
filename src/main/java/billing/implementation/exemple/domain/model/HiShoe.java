@@ -48,4 +48,15 @@ public class HiShoe {
     public String getReferenceProduit() {
         return referenceProduit;
     }
+
+    @Override
+    public String toString() {
+        return "HiShoe{" +
+                ", referenceProduit='" + referenceProduit + '\'' +
+                ", price=" + price +
+                ", model=" + model +
+                ", color=" + color +
+                ", size=" + size +
+                '}';
+    }
 }

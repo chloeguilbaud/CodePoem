@@ -68,4 +68,15 @@ public class InvoiceLine {
     public double getTotal() {
         return total;
     }
+
+    @Override
+    public String toString() {
+        return "InvoiceLine{" +
+                "productReference='" + productReference + '\'' +
+                ", description='" + description + '\'' +
+                ", pricePerUnit=" + pricePerUnit +
+                ", quantity=" + quantity +
+                ", total=" + total +
+                '}';
+    }
 }

@@ -12,6 +12,10 @@ public class InMemoryInvoiceClientRepository implements InvoiceClientRepository 
 
     private ClientRepository repository;
 
+    public InMemoryInvoiceClientRepository(ClientRepository repository) {
+        this.repository = repository;
+    }
+
     @Override
     public Client findById(UUID clientId) {
 

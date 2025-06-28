@@ -9,22 +9,31 @@ import order.domain.port.repositories.HiShoeRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 @Repository
 public class InMemoryHiShoeRepository implements HiShoeRepository {
 
-    private final HashMap<Integer, HiShoe> hiShoes;
+    private final HashMap<UUID, HiShoe> hiShoes;
 
     public InMemoryHiShoeRepository() throws InvalidShoeSizeException {
         this.hiShoes = new HashMap<>();
-        this.hiShoes.put(1, new HiShoe(1, HISHOE_MODEL.BISTRO_CLOG, HISHOE_COLOR.BLUE, 35.5F));
-        this.hiShoes.put(2, new HiShoe(2, HISHOE_MODEL.CLASSIC_CLOG, HISHOE_COLOR.YELLOW, 39.5F));
-        this.hiShoes.put(3, new HiShoe(3, HISHOE_MODEL.hiShoeBAND_CLOG, HISHOE_COLOR.BLUE, 31.5F));
-        this.hiShoes.put(4, new HiShoe(4, HISHOE_MODEL.BISTRO_CLOG, HISHOE_COLOR.BLACK, 35F));
+
+        UUID idA = UUID.fromString("A1111111-1111-1111-1111-111111111111");
+        this.hiShoes.put(idA, new HiShoe(idA, HISHOE_MODEL.BISTRO_CLOG, HISHOE_COLOR.BLUE, 35.5F, 69.00));
+
+        UUID idB = UUID.fromString("B1111111-1111-1111-1111-111111111111");
+        this.hiShoes.put(idB, new HiShoe(idB, HISHOE_MODEL.CLASSIC_CLOG, HISHOE_COLOR.YELLOW, 39.5F, 65.98));
+
+        UUID idC = UUID.fromString("C1111111-1111-1111-1111-111111111111");
+        this.hiShoes.put(idC, new HiShoe(idC, HISHOE_MODEL.hiShoeBAND_CLOG, HISHOE_COLOR.BLUE, 31.5F, 65.97));
+
+        UUID idD = UUID.fromString("D1111111-1111-1111-1111-111111111111");
+        this.hiShoes.put(idD, new HiShoe(idD, HISHOE_MODEL.BISTRO_CLOG, HISHOE_COLOR.BLACK, 35F, 34.00));
     }
 
     @Override
-    public HiShoe get(int hiShoeReference) throws HiShoeNotFoundException {
+    public HiShoe get(UUID hiShoeReference) throws HiShoeNotFoundException {
         if(hiShoes.containsKey(hiShoeReference)) {
             return this.hiShoes.get(hiShoeReference);
         }

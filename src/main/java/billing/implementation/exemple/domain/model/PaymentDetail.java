@@ -42,4 +42,14 @@ public class PaymentDetail {
     public PayerInformations getPayerDetails() {
         return payerInformations;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentDetail{" +
+                "amount=" + amount +
+                ", paymentDate=" + paymentDate +
+                ", paymentMethod=" + paymentMethod +
+                ", payerInformations=" + payerInformations +
+                '}';
+    }
 }

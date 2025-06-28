@@ -29,4 +29,12 @@ public class Client {
     public String getAddress() {
         return address;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
 }

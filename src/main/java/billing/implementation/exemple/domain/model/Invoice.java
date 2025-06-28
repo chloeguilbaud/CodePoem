@@ -16,7 +16,6 @@ public class Invoice {
     private double totalAmount;
     private double totalAmountPayed;
     private final Client client;
-    private boolean isPaid;
     private final List<PaymentDetail> paiementDetails;
     private InvoiceStatus status;
 
@@ -28,8 +27,8 @@ public class Invoice {
         this.issueDate = issueDate;
         this.itemList = itemList;
         calculateTotalAmount();
-        this.isPaid = false; // Default state is unpaid
         this.paiementDetails = new ArrayList<PaymentDetail>();
+        this.status = InvoiceStatus.PENDING;
     }
 
     private void calculateTotalAmount() {
@@ -63,14 +62,14 @@ public class Invoice {
     }
 
     public boolean isPaid() {
-        return isPaid;
+        return this.status == InvoiceStatus.PAID;
     }
 
     // Business logic: Pay the invoice
     // « la somme des paiements ne peut pas dépasser le montant dû »
     public void pay(PaymentDetail paymentDetail) {
 
-        if (isPaid) {
+        if (isPaid()) {
             throw new IllegalStateException("Invoice already paid.");
         }
 
@@ -81,7 +80,6 @@ public class Invoice {
         this.status = InvoiceStatus.PARTIALLY_PAID;
 
         if (this.totalAmountPayed == this.totalAmount) {
-            this.isPaid = true;
             this.status = InvoiceStatus.PAID;
         }
 
@@ -99,5 +97,18 @@ public class Invoice {
 
     public InvoiceStatus getStatus() {
         return status;
+    }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "invoiceId=" + invoiceId +
+                ", issueDate=" + issueDate +
+                ", itemList=" + itemList +
+                ", totalAmount=" + totalAmount +
+                ", totalAmountPayed=" + totalAmountPayed +
+                ", client=" + client +
+                ", status=" + status +
+                '}';
     }
 }

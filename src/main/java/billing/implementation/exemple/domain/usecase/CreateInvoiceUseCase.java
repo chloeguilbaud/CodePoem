@@ -2,6 +2,7 @@ package billing.implementation.exemple.domain.usecase;
 
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceItemListException;
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceListQuantityException;
+import billing.implementation.exemple.domain.model.Invoice;
 import order.domain.exceptions.HiShoeNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
  * Elle définit les méthodes nécessaires pour initier une facture dans le domaine.
  */
 public interface CreateInvoiceUseCase {
-    void handle(CreateInvoiceCommand command) throws InvalidInvoiceItemListException, InvalidInvoiceListQuantityException, HiShoeNotFoundException;
+    Invoice handle(CreateInvoiceCommand command) throws InvalidInvoiceItemListException, InvalidInvoiceListQuantityException, HiShoeNotFoundException;
 }
 
 

@@ -4,8 +4,10 @@ import billing.implementation.exemple.domain.exceptions.InvalidInvoiceItemListEx
 import billing.implementation.exemple.domain.exceptions.InvalidInvoiceListQuantityException;
 import billing.implementation.exemple.domain.model.*;
 import billing.implementation.exemple.domain.port.repositories.InvoiceClientRepository;
+import billing.implementation.exemple.domain.port.repositories.InvoiceHiShoeRepository;
 import billing.implementation.exemple.domain.port.repositories.InvoiceRepository;
 import billing.implementation.exemple.domain.usecase.*;
+import order.domain.exceptions.HiShoeNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -16,16 +18,17 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, GetInv
 
     private InvoiceRepository invoiceRepository;
     private InvoiceClientRepository clientRepository;
+    private InvoiceHiShoeRepository hiShoeRepository;
 
-    public BillingDomainServiceHandler(InvoiceRepository invoiceRepository, InvoiceClientRepository clientRepository) {
+    public BillingDomainServiceHandler(InvoiceRepository invoiceRepository, InvoiceClientRepository clientRepository, InvoiceHiShoeRepository hiShoeRepository) {
         this.invoiceRepository = invoiceRepository;
         this.clientRepository = clientRepository;
+        this.hiShoeRepository = hiShoeRepository;
     }
 
     @Override
-    public void handle(CreateInvoiceCommand command) throws InvalidInvoiceItemListException, InvalidInvoiceListQuantityException {
+    public Invoice handle(CreateInvoiceCommand command) throws InvalidInvoiceItemListException, InvalidInvoiceListQuantityException, HiShoeNotFoundException {
         // prend une commande validée,
-
 
 
         // génèrer une facture
@@ -33,7 +36,11 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, GetInv
 
         List<InvoiceLine> invoiceLines = new ArrayList<>();
 
-        for (HiShoe shoe : command.getProducts()) {
+        for (Map.Entry<UUID, Integer> entry : command.getProducts().entrySet()) {
+            UUID hishoeRef = entry.getKey();
+            Integer qt = entry.getValue();
+            HiShoe shoe = null;
+            shoe = hiShoeRepository.findById(hishoeRef);
             // Si le produit existe déjà sur la facture, augmenter la quantité produit
             // sur la ligne de facturation
             addOrUpdateLine(invoiceLines,
@@ -42,7 +49,7 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, GetInv
                                     shoe.getModel(), shoe.getColor(), shoe.getSize()),
                             shoe.getReferenceProduit(),
                             shoe.getPrice(),
-                            1
+                            qt
                     ));
         }
         Client client = clientRepository.findById(command.getClient());
@@ -53,6 +60,7 @@ public class BillingDomainServiceHandler implements CreateInvoiceUseCase, GetInv
         // et la sauvegarde,
         invoiceRepository.save(invoice);
 
+        return invoice;
     }
 
     public void addOrUpdateLine(List<InvoiceLine> lines, InvoiceLine newLine) throws InvalidInvoiceListQuantityException {

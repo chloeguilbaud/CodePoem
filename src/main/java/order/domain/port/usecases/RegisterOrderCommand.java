@@ -7,9 +7,9 @@ import java.util.UUID;
 public class RegisterOrderCommand implements Command {
 
     private final UUID clientId;
-    private final int hiShoeReference;
+    private final UUID hiShoeReference;
 
-    public RegisterOrderCommand(UUID clientId, int hiShoeReference)
+    public RegisterOrderCommand(UUID clientId, UUID hiShoeReference)
     {
         this.clientId = clientId;
         this.hiShoeReference = hiShoeReference;
@@ -19,7 +19,7 @@ public class RegisterOrderCommand implements Command {
         return clientId;
     }
 
-    public int getHiShoeReference() {
+    public UUID getHiShoeReference() {
         return hiShoeReference;
     }
 
