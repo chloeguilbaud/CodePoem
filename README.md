@@ -156,6 +156,7 @@ Que vous soyez un·e novice intrépide ou un·e vétéran·e chevronné·e de la
 Alors je vous propose une courte session pour transformer vos lignes de code en véritable poésie…
 
 Ce répo git vient en support pratique de la conférence ["Quand le code devient poésie..."](https://hiweb.fr/conference-quand-le-code-devient-poesie) de [Chloé Guilbaud](https://hiweb.fr/conference/linkedin), co-fondatrice du collectif de freelance [Hi Web!](https://hiweb.fr).
+Pour consulter la description complète de la conférence : [Quand le code devient poésie...](https://hiwebfr.notion.site/CFP-Quand-le-code-devient-po-sie-2d275dfff6744a0482c2b2310a0dde83?source=copy_link).
 
 ### Ressources utiles
 Parce que la connaissance seule ne suffit pas : c’est en pratiquant qu’on progresse vraiment. Après la conférence, je vous invite à plonger dans le code ! Et pour cela, je vous offre un petit cadeau : un répertoire Git et des ressources pour continuer à explorer et expérimenter par vous-même.
