@@ -17,6 +17,7 @@
     * [Prérequis](#prérequis)
     * [Installation](#installation)
     * [Exécution](#exécution)
+    * [Jeux de données et 🧪 Tests API avec Postman](#jeux-de-données-et--tests-api-avec-postman)
   * [Cas d'étude : Hi Shoes - "C'est pas beau, mais c'est pratique"](#cas-détude--hi-shoes---cest-pas-beau-mais-cest-pratique)
     * [Domaine Principal (Core Domain) : La gestion des commandes](#domaine-principal-core-domain--la-gestion-des-commandes)
     * [Sous-domaines dans l'exemple](#sous-domaines-dans-lexemple)
@@ -142,6 +143,7 @@
     * [1️⃣ **Adaptateurs entrants : exposer les cas d’utilisation**](#1-adaptateurs-entrants--exposer-les-cas-dutilisation)
     * [2️⃣ **Assembler les ports et adaptateurs**](#2-assembler-les-ports-et-adaptateurs)
     * [3️⃣ **Écrire un test de bout en bout**](#3-écrire-un-test-de-bout-en-bout)
+* [🪶 Evolutions](#-evolutions)
 * [🪶 **Des questions ? Des retours ?**](#-des-questions--des-retours-)
 <!-- TOC -->
 
@@ -152,6 +154,8 @@ Dans le monde de la technologie, maîtriser quelques concepts clés peut faire t
 Que vous soyez un·e novice intrépide ou un·e vétéran·e chevronné·e de la tech, l’architecture hexagonale permet d'éviter les pièges et les écueils lorsque plusieurs développeurs collaborent sur un même projet.
 
 Alors je vous propose une courte session pour transformer vos lignes de code en véritable poésie…
+
+Ce répo git vient en support pratique de la conférence ["Quand le code devient poésie..."](https://hiweb.fr/conference-quand-le-code-devient-poesie) de [Chloé Guilbaud](https://hiweb.fr/conference/linkedin), co-fondatrice du collectif de freelance [Hi Web!](https://hiweb.fr).
 
 ### Ressources utiles
 Parce que la connaissance seule ne suffit pas : c’est en pratiquant qu’on progresse vraiment. Après la conférence, je vous invite à plonger dans le code ! Et pour cela, je vous offre un petit cadeau : un répertoire Git et des ressources pour continuer à explorer et expérimenter par vous-même.
