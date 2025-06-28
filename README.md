@@ -251,7 +251,30 @@ Assures toi d'avoir les éléments suivants installés sur votre machine :
     
     ```
 
-### Jeux de données et tests
+### Jeux de données et 🧪 Tests API avec Postman
+
+Un dossier `postman/` contient des **jeux de requêtes Postman** permettant de tester rapidement l’API REST exposée par cette application.
+
+**Emplacement :**
+
+```
+src/test/resources/postman/
+```
+
+**Contenu :**
+
+`codepoeme.postman-collection.json`
+- hello world `POST /hello`
+- exemples de requêtes `POST /invoice`, `GET /invoices`
+- commandes d'achat de hiShoes `POST /order`
+
+**Comment les utiliser :**
+
+1. Ouvre Postman
+2. Clique sur **Importer** (`File > Import` ou icône "+" → **Import**)
+3. Sélectionne le fichier `.json` dans `src/test/resources/postman/`
+4. Laisse Postman importer la collection
+5. Exécute les requêtes (vérifie que le backend est bien démarré sur `localhost:8080`)
 
 
 ## Cas d'étude : Hi Shoes - "C'est pas beau, mais c'est pratique"
