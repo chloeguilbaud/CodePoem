@@ -4,8 +4,36 @@
 
 ⏰ Temps d'exercice pratique estimé : 2h30
 
+# **📄 Licence / License**
+
+🇫🇷 Ce projet (code + contenus pédagogiques) est publié sous licence [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.fr).  
+Vous pouvez l'utiliser, le modifier et le partager dans un cadre **non commercial**, à condition de :
+- forker ce dépôt,
+- laisser une étoile ⭐ sur ce dépôt,
+- citer l’autrice : **Chloé Guilbaud**
+  - [hiweb.fr](https://hiweb.fr)
+  - [chloe-guilbaud.fr](https://chloe-guilbaud.fr)
+  - [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/)
+
+**Merci de respecter ces conditions afin de soutenir le travail de création et de transmission 😊**
+
+🇬🇧 This project (code + educational content) is licensed under [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).  
+You may use, modify, and share it for **non-commercial** purposes only, provided that you:
+- fork this repository,
+- leave a ⭐ on this repository,
+- credit the author: **Chloé Guilbaud**
+  - [hiweb.fr](https://hiweb.fr)
+  - [chloe-guilbaud.fr](https://chloe-guilbaud.fr)
+  - [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/)
+
+**Thank you for respecting these conditions and supporting this work of creation and knowledge sharing 😊**
+
+---
+
+
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
+* [**📄 Licence / License**](#-licence--license)
   * [Contexte de ce répo](#contexte-de-ce-répo)
     * [**Ressources utiles**](#ressources-utiles)
     * [**Des questions ? Des retours ?**](#des-questions--des-retours-)
@@ -331,11 +359,11 @@ L'application est construite de manière à séparer les préoccupations liées 
 
 - **DDD – Domain-Driven Design** : Comprendre le domaine métier, les modèles riches, les Use Cases, et la langue d’ubiquité.
 
-![codepoeme-illustration-ddd.png](src/main/resources/doc/image/codepoeme-illustration-ddd.png)
+![codepoeme-illustration-ddd.png](assets/codepoeme-illustration-ddd.png)
 
 - **Architecture hexagonale** : Isolation de la logique métier, ports et adaptateurs, séparation des préoccupations entre domaine et infrastructure.
 
-![codepoeme-illustration-archihexa.png](src/main/resources/doc/image/codepoeme-illustration-archihexa.png)
+![codepoeme-illustration-archihexa.png](assets/codepoeme-illustration-archihexa.png)
 
 Ces ressources sont conçues pour prolonger votre apprentissage et vous encourager à expérimenter avec le code. Si vous avez des questions ou souhaitez échanger des idées, je suis toujours ravie de discuter — connectez-moi sur [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/) !
 
