@@ -6,10 +6,10 @@
 
 <!-- TOC -->
 * [Quand le code devient poésie...](#quand-le-code-devient-poésie)
-  * [Contexte de ce répo](#contexte-de-ce-répo)
-    * [Ressources utiles](#ressources-utiles)
-    * [Des questions ? Des retours ?](#des-questions--des-retours-)
-    * [Pourquoi ce projet ?](#pourquoi-ce-projet-)
+  * [**Contexte de ce répo**](#contexte-de-ce-répo)
+    * [**Ressources utiles**](#ressources-utiles)
+    * [**Des questions ? Des retours ?**](#des-questions--des-retours-)
+    * [**Pourquoi ce projet ?**](#pourquoi-ce-projet-)
     * [Qu’allez-vous trouver ici ?](#quallez-vous-trouver-ici-)
     * [Vos premiers pas 🛠️](#vos-premiers-pas-)
     * [Versions](#versions)
@@ -24,7 +24,7 @@
     * [Répartition par rôle vs par fonctionnalité](#répartition-par-rôle-vs-par-fonctionnalité)
     * [Concepts de DDD et Architecture Hexagonale](#concepts-de-ddd-et-architecture-hexagonale)
     * [Concepts abordés :](#concepts-abordés-)
-* [🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale](#-organisation-du-code--explorer-les-concepts-clés-du-ddd-et-de-larchitecture-hexagonale)
+* [**🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale**](#-organisation-du-code--explorer-les-concepts-clés-du-ddd-et-de-larchitecture-hexagonale)
     * [1. `order/domain` : Le Cœur du Domaine Métier](#1-orderdomain--le-cœur-du-domaine-métier)
     * [2. `order/application` : Les Cas d’Utilisation](#2-orderapplication--les-cas-dutilisation)
     * [3. `order/infrastructure` : Les Adaptateurs Techniques](#3-orderinfrastructure--les-adaptateurs-techniques)
@@ -34,7 +34,7 @@
     * [Objectifs pédagogiques](#objectifs-pédagogiques)
     * [Contexte du projet](#contexte-du-projet)
     * [À quoi t'attendre](#à-quoi-tattendre)
-* [🪶 Passer à la pratique - exercice concret](#-passer-à-la-pratique---exercice-concret)
+* [**🪶 Passer à la pratique - exercice concret**](#-passer-à-la-pratique---exercice-concret)
   * [**Etape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité Strategic Design**](#etape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
     * [Contexte](#contexte)
     * [Pourquoi Strategic Design ?](#pourquoi-strategic-design-)
@@ -48,106 +48,106 @@
     * [Exemple dans HiShoes — Sous-domaine Facturation](#exemple-dans-hishoes--sous-domaine-facturation)
     * [Objectif pédagogique de l’étape](#objectif-pédagogique-de-létape)
     * [Concepts DDD impliqués](#concepts-ddd-impliqués-1)
-    * [**Actions pratiques**](#actions-pratiques-1)
-    * [🎯 **Méthodologie pour identifier les cas d’utilisation**](#-méthodologie-pour-identifier-les-cas-dutilisation)
-    * [**Pièges à éviter**](#pièges-à-éviter)
-  * [**Étape 3 : Conceptualiser le modèle du domaine**](#étape-3--conceptualiser-le-modèle-du-domaine)
-    * [**Contexte**](#contexte-2)
-    * [**Pourquoi modéliser le domaine en DDD ?**](#pourquoi-modéliser-le-domaine-en-ddd)
-    * [**Objectif pédagogique de l’étape**](#objectif-pédagogique-de-létape-1)
-    * [**Méthodologie pour conceptualiser le modèle**](#méthodologie-pour-conceptualiser-le-modèle)
-    * [1️⃣ **Identifier les concepts métier stables et distincts**](#1-identifier-les-concepts-métier-stables-et-distincts)
-    * [2️⃣ **Classer ces concepts**](#2-classer-ces-concepts)
-    * [3️⃣ **Définir les relations**](#3-définir-les-relations)
-    * [**Résultat attendu**](#résultat-attendu)
-    * [**Pièges à éviter pour un débutant**](#pièges-à-éviter-pour-un-débutant)
+    * [Actions pratiques](#actions-pratiques-1)
+    * [🎯 Méthodologie pour identifier les cas d’utilisation](#-méthodologie-pour-identifier-les-cas-dutilisation)
+    * [Pièges à éviter](#pièges-à-éviter)
+  * [Étape 3 : Conceptualiser le modèle du domaine](#étape-3--conceptualiser-le-modèle-du-domaine)
+    * [Contexte](#contexte-2)
+    * [Pourquoi modéliser le domaine en DDD ?](#pourquoi-modéliser-le-domaine-en-ddd)
+    * [Objectif pédagogique de l’étape](#objectif-pédagogique-de-létape-1)
+    * [Méthodologie pour conceptualiser le modèle](#méthodologie-pour-conceptualiser-le-modèle)
+    * [1️⃣ Identifier les concepts métier stables et distincts](#1-identifier-les-concepts-métier-stables-et-distincts)
+    * [2️⃣ Classer ces concepts](#2-classer-ces-concepts)
+    * [3️⃣ Définir les relations](#3-définir-les-relations)
+    * [Résultat attendu](#résultat-attendu)
+    * [Pièges à éviter pour un débutant](#pièges-à-éviter-pour-un-débutant)
   * [Étape 4 : Implémentation du modèle](#étape-4--implémentation-du-modèle)
-    * [**Contexte**](#contexte-3)
-    * [**Pourquoi implémenter le modèle avant tout autre chose ?**](#pourquoi-implémenter-le-modèle-avant-tout-autre-chose-)
-    * [**Objectif pédagogique**](#objectif-pédagogique-1)
-    * [**Exercice pratique et méthodologie**](#exercice-pratique-et-méthodologie)
-    * [**Pièges à éviter**](#pièges-à-éviter-1)
+    * [Contexte](#contexte-3)
+    * [Pourquoi implémenter le modèle avant tout autre chose ?](#pourquoi-implémenter-le-modèle-avant-tout-autre-chose-)
+    * [Objectif pédagogique](#objectif-pédagogique-1)
+    * [Exercice pratique et méthodologie](#exercice-pratique-et-méthodologie)
+    * [Pièges à éviter](#pièges-à-éviter-1)
   * [Étape 5 : Création des services du domaine](#étape-5--création-des-services-du-domaine)
-    * [**Contexte**](#contexte-4)
-    * [**Pourquoi créer des services de domaine en DDD ?**](#pourquoi-créer-des-services-de-domaine-en-ddd-)
-    * [**Objectif pédagogique**](#objectif-pédagogique-2)
-    * [**Quand créer un service de domaine ?**](#quand-créer-un-service-de-domaine-)
-    * [**Passer à la pratique : Facturation de HiShoes**](#passer-à-la-pratique--facturation-de-hishoes)
-    * [**Résultat attendu**](#résultat-attendu-1)
-    * [**Pièges à éviter pour un débutant**](#pièges-à-éviter-pour-un-débutant-1)
+    * [Contexte](#contexte-4)
+    * [Pourquoi créer des services de domaine en DDD ?](#pourquoi-créer-des-services-de-domaine-en-ddd-)
+    * [Objectif pédagogique](#objectif-pédagogique-2)
+    * [Quand créer un service de domaine ?](#quand-créer-un-service-de-domaine-)
+    * [Passer à la pratique : Facturation de HiShoes](#passer-à-la-pratique--facturation-de-hishoes)
+    * [Résultat attendu](#résultat-attendu-1)
+    * [Pièges à éviter pour un débutant](#pièges-à-éviter-pour-un-débutant-1)
   * [Étape 6 : Implémentation des cas d’utilisation — Pattern Command / Query](#étape-6--implémentation-des-cas-dutilisation--pattern-command--query)
-    * [**Pourquoi utiliser un pattern Command / Query ?**](#pourquoi-utiliser-un-pattern-command--query-)
-    * [**Objectif pédagogique**](#objectif-pédagogique-3)
-    * [🌟 **Explication du pattern Command / Query dans le contexte DDD**](#-explication-du-pattern-command--query-dans-le-contexte-ddd)
-    * [**Command : exprimer une intention**](#command--exprimer-une-intention)
-    * [**Query : fournir des informations pour guider une décision**](#query--fournir-des-informations-pour-guider-une-décision)
-    * [**Vision complémentaire : le dialogue Command / Query**](#vision-complémentaire--le-dialogue-command--query)
-    * [**Pourquoi ce pattern est utile ?**](#pourquoi-ce-pattern-est-utile-)
-    * [**Exercice pratique**](#exercice-pratique)
-    * [**Résultat attendu**](#résultat-attendu-2)
-    * [**Pièges à éviter**](#pièges-à-éviter-2)
-  * [**Étape 7 : Ports et adaptateurs sortants**](#étape-7--ports-et-adaptateurs-sortants)
-    * [**Contexte**](#contexte-5)
-    * [**Pourquoi des ports et adaptateurs ?**](#pourquoi-des-ports-et-adaptateurs-)
-    * [**Objectif pédagogique**](#objectif-pédagogique-4)
+    * [Pourquoi utiliser un pattern Command / Query ?](#pourquoi-utiliser-un-pattern-command--query-)
+    * [Objectif pédagogique](#objectif-pédagogique-3)
+    * [🌟 Explication du pattern Command / Query dans le contexte DDD](#-explication-du-pattern-command--query-dans-le-contexte-ddd)
+    * [Command : exprimer une intention](#command--exprimer-une-intention)
+    * [Query : fournir des informations pour guider une décision](#query--fournir-des-informations-pour-guider-une-décision)
+    * [Vision complémentaire : le dialogue Command / Query](#vision-complémentaire--le-dialogue-command--query)
+    * [Pourquoi ce pattern est utile ?](#pourquoi-ce-pattern-est-utile-)
+    * [Exercice pratique](#exercice-pratique)
+    * [Résultat attendu](#résultat-attendu-2)
+    * [Pièges à éviter](#pièges-à-éviter-2)
+  * [Étape 7 : Ports et adaptateurs sortants](#étape-7--ports-et-adaptateurs-sortants)
+    * [Contexte](#contexte-5)
+    * [Pourquoi des ports et adaptateurs ?](#pourquoi-des-ports-et-adaptateurs-)
+    * [Objectif pédagogique](#objectif-pédagogique-4)
     * [Passer à la pratique](#passer-à-la-pratique)
-    * [**Résultat attendu**](#résultat-attendu-3)
-    * [**Pièges à éviter pour un débutant**](#pièges-à-éviter-pour-un-débutant-2)
-  * [**Étape finale : Assemblage et test de bout en bout**](#étape-finale--assemblage-et-test-de-bout-en-bout)
-    * [**Contexte**](#contexte-6)
-    * [**Objectif pédagogique**](#objectif-pédagogique-5)
-* [🪶 **Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**](#-résultat-attendu-ou-proposition-de-compréhension-du-domaine-métier-de-lentreprise)
+    * [Résultat attendu](#résultat-attendu-3)
+    * [Pièges à éviter pour un débutant](#pièges-à-éviter-pour-un-débutant-2)
+  * [Étape finale : Assemblage et test de bout en bout](#étape-finale--assemblage-et-test-de-bout-en-bout)
+    * [Contexte](#contexte-6)
+    * [Objectif pédagogique](#objectif-pédagogique-5)
+* [**🪶 Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**](#-résultat-attendu-ou-proposition-de-compréhension-du-domaine-métier-de-lentreprise)
   * [Étape 1 : Comprendre l’importance de la collaboration et de la langue d’ubiquité (Strategic Design)](#étape-1--comprendre-limportance-de-la-collaboration-et-de-la-langue-dubiquité-strategic-design)
   * [Étape 2 : Identifier les cas d’utilisation métier](#étape-2--identifier-les-cas-dutilisation-métier-1)
-    * [**Cas d’utilisation identifiés pour HiShoes — Facturation**](#cas-dutilisation-identifiés-pour-hishoes--facturation)
-    * [**Résultat attendu**](#résultat-attendu-4)
-    * [**Exemple de cas d’utilisation : Créer une facture pour une commande validée**](#exemple-de-cas-dutilisation--créer-une-facture-pour-une-commande-validée)
-    * [**Nom du cas d’utilisation**](#nom-du-cas-dutilisation)
-    * [**Objectif**](#objectif)
-    * [**Acteurs principaux**](#acteurs-principaux)
-    * [**Pré-condition**](#pré-condition)
-    * [**Déclencheur**](#déclencheur)
-    * [**Description du scénario principal**](#description-du-scénario-principal)
-    * [**Règles métier**](#règles-métier)
-    * [**Exceptions**](#exceptions)
-    * [**Post-condition**](#post-condition)
-    * [**Données manipulées**](#données-manipulées)
-    * [**Langue d’ubiquité utilisée**](#langue-dubiquité-utilisée)
-    * [**Étape 3 : Conceptualiser le modèle du domaine**](#étape-3--conceptualiser-le-modèle-du-domaine-1)
-    * [Agrégat racine : **Facture (Invoice)**](#agrégat-racine--facture-invoice)
+    * [Cas d’utilisation identifiés pour HiShoes — Facturation](#cas-dutilisation-identifiés-pour-hishoes--facturation)
+    * [Résultat attendu](#résultat-attendu-4)
+    * [Exemple de cas d’utilisation : Créer une facture pour une commande validée](#exemple-de-cas-dutilisation--créer-une-facture-pour-une-commande-validée)
+    * [Nom du cas d’utilisation](#nom-du-cas-dutilisation)
+    * [Objectif](#objectif)
+    * [Acteurs principaux](#acteurs-principaux)
+    * [Pré-condition](#pré-condition)
+    * [Déclencheur](#déclencheur)
+    * [Description du scénario principal](#description-du-scénario-principal)
+    * [Règles métier](#règles-métier)
+    * [Exceptions](#exceptions)
+    * [Post-condition](#post-condition)
+    * [Données manipulées](#données-manipulées)
+    * [Langue d’ubiquité utilisée](#langue-dubiquité-utilisée)
+    * [Étape 3 : Conceptualiser le modèle du domaine](#étape-3--conceptualiser-le-modèle-du-domaine-1)
+    * [Agrégat racine : **Facture (Invoice)](#agrégat-racine--facture-invoice)
     * [Entités et objets de valeur](#entités-et-objets-de-valeur)
-    * [**Règles métier intégrées au modèle**](#règles-métier-intégrées-au-modèle)
+    * [Règles métier intégrées au modèle](#règles-métier-intégrées-au-modèle)
   * [Étape 4 : Implémentation du modèle](#étape-4--implémentation-du-modèle-1)
-    * [1️⃣ **Commence par les objets de valeur**](#1-commence-par-les-objets-de-valeur)
-    * [2️⃣ **Code l’agrégat racine**](#2-code-lagrégat-racine)
-    * [3️⃣ **Implémente les autres entités / VO**](#3-implémente-les-autres-entités--vo)
+    * [1️⃣ Commence par les objets de valeur](#1-commence-par-les-objets-de-valeur)
+    * [2️⃣ Code l’agrégat racine](#2-code-lagrégat-racine)
+    * [3️⃣ Implémente les autres entités / VO](#3-implémente-les-autres-entités--vo)
   * [Notion importante : l’objet est garant de son intégrité](#notion-importante--lobjet-est-garant-de-son-intégrité)
-    * [**Mauvaise approche (la règle est laissée au code extérieur)**](#mauvaise-approche-la-règle-est-laissée-au-code-extérieur)
-    * [**Bonne approche (le modèle garantit lui-même son intégrité)**](#bonne-approche-le-modèle-garantit-lui-même-son-intégrité)
+    * [Mauvaise approche (la règle est laissée au code extérieur)](#mauvaise-approche-la-règle-est-laissée-au-code-extérieur)
+    * [Bonne approche (le modèle garantit lui-même son intégrité)](#bonne-approche-le-modèle-garantit-lui-même-son-intégrité)
   * [Étape 5 : Création des services du domaine](#étape-5--création-des-services-du-domaine-1)
-    * [**Exemple de code (Java / pseudo code simplifié)**](#exemple-de-code-java--pseudo-code-simplifié)
+    * [Exemple de code (Java / pseudo code simplifié)](#exemple-de-code-java--pseudo-code-simplifié)
   * [Étape 6 : Implémentation des cas d’utilisation — Pattern Command / Query](#étape-6--implémentation-des-cas-dutilisation--pattern-command--query-1)
-    * [**Structure type d’un cas d’utilisation**](#structure-type-dun-cas-dutilisation)
-    * [**Exemple concret : créer une facture (Command)**](#exemple-concret--créer-une-facture-command)
-    * [📝 **Command**](#-command)
-    * [📝 **CommandHandler**](#-commandhandler)
-    * [**Exemple concret : retrouver une facture (Query)**](#exemple-concret--retrouver-une-facture-query)
-    * [📝 **Query**](#-query)
-    * [📝 **QueryHandler**](#-queryhandler)
+    * [Structure type d’un cas d’utilisation](#structure-type-dun-cas-dutilisation)
+    * [Exemple concret : créer une facture (Command)](#exemple-concret--créer-une-facture-command)
+    * [📝 Command](#-command)
+    * [📝 CommandHandler](#-commandhandler)
+    * [Exemple concret : retrouver une facture (Query)](#exemple-concret--retrouver-une-facture-query)
+    * [📝 Query](#-query)
+    * [📝 QueryHandler](#-queryhandler)
   * [Étape 7 : Ports et adaptateurs sortants](#étape-7--ports-et-adaptateurs-sortants-1)
-    * [**Exemple concret : Facturation HiShoes**](#exemple-concret--facturation-hishoes)
-    * [**Port : `InvoiceRepository`**](#port--invoicerepository)
-    * [**Port : `PaymentProcessor` (exemple optionnel)**](#port--paymentprocessor-exemple-optionnel)
-    * [**Adaptateur sortant : une implémentation de `InvoiceRepository`**](#adaptateur-sortant--une-implémentation-de-invoicerepository)
+    * [Exemple concret : Facturation HiShoes](#exemple-concret--facturation-hishoes)
+    * [Port : `InvoiceRepository`](#port--invoicerepository)
+    * [Port : `PaymentProcessor` (exemple optionnel)](#port--paymentprocessor-exemple-optionnel)
+    * [Adaptateur sortant : une implémentation de `InvoiceRepository`](#adaptateur-sortant--une-implémentation-de-invoicerepository)
   * [Étape finale : Assemblage et test de bout en bout](#étape-finale--assemblage-et-test-de-bout-en-bout-1)
-    * [1️⃣ **Adaptateurs entrants : exposer les cas d’utilisation**](#1-adaptateurs-entrants--exposer-les-cas-dutilisation)
-    * [2️⃣ **Assembler les ports et adaptateurs**](#2-assembler-les-ports-et-adaptateurs)
-    * [3️⃣ **Écrire un test de bout en bout**](#3-écrire-un-test-de-bout-en-bout)
+    * [1️⃣ Adaptateurs entrants : exposer les cas d’utilisation](#1-adaptateurs-entrants--exposer-les-cas-dutilisation)
+    * [2️⃣ Assembler les ports et adaptateurs](#2-assembler-les-ports-et-adaptateurs)
+    * [3️⃣ Écrire un test de bout en bout](#3-écrire-un-test-de-bout-en-bout)
 * [🪶 Evolutions](#-evolutions)
-* [🪶 **Des questions ? Des retours ?**](#-des-questions--des-retours-)
+* [**🪶 Des questions ? Des retours ?**](#-des-questions--des-retours-)
 <!-- TOC -->
 
-## Contexte de ce répo
+## **Contexte de ce répo**
 
 Dans le monde de la technologie, maîtriser quelques concepts clés peut faire toute la différence entre un bon·ne développeur·euse et un·e développeur·euse exceptionnel·le. Les design patterns sont ces concepts essentiels qui vous permettront de produire des applications de haute qualité, faciles à maintenir et à faire évoluer. Vous n’avez pas besoin de connaître tous les design patterns. Un ou deux peuvent suffire, et aujourd’hui je vous propose de découvrir l’architecture hexagonale et le Domain Driven Design.
 
@@ -158,7 +158,7 @@ Alors je vous propose une courte session pour transformer vos lignes de code en 
 Ce répo git vient en support pratique de la conférence ["Quand le code devient poésie..."](https://hiweb.fr/conference-quand-le-code-devient-poesie) de [Chloé Guilbaud](https://hiweb.fr/conference/linkedin), co-fondatrice du collectif de freelance [Hi Web!](https://hiweb.fr).
 Pour consulter la description complète de la conférence : [Quand le code devient poésie...](https://hiwebfr.notion.site/CFP-Quand-le-code-devient-po-sie-2d275dfff6744a0482c2b2310a0dde83?source=copy_link).
 
-### Ressources utiles
+### **Ressources utiles**
 Parce que la connaissance seule ne suffit pas : c’est en pratiquant qu’on progresse vraiment. Après la conférence, je vous invite à plonger dans le code ! Et pour cela, je vous offre un petit cadeau : un répertoire Git et des ressources pour continuer à explorer et expérimenter par vous-même.
 - Ce répertoire Git : un ensemble d’exemples pratiques et de projets que chacun·e peut explorer et adapter. Rien de tel que de mettre les mains dans le code pour bien assimiler les concepts.
 - [La cheat sheet](https://hiweb.fr/conference/quand-le-code-devient-poesie/form) : un guide rapide qui regroupe l’essentiel des concepts et des bonnes pratiques, pour vous aider à les appliquer plus facilement.
@@ -166,7 +166,7 @@ Parce que la connaissance seule ne suffit pas : c’est en pratiquant qu’on pr
 - [Article de blog](https://hiweb.fr/conference-quand-le-code-devient-poesie) : Retrouvez un récapitulatif complet, les actualités sur le sujet, et tous les supports de la conférence.
 - 👉 N’hésitez pas à forker le projet, à tester, à modifier et à partager vos idées : c’est en expérimentant qu’on apprend le mieux !
 
-### Des questions ? Des retours ?
+### **Des questions ? Des retours ?**
 
 Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou vos suggestions pour améliorer ce projet.
 
@@ -174,7 +174,7 @@ Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou 
 
 🔗 **Retrouvez-moi sur LinkedIn** : [Chloé Guilbaud](https://www.linkedin.com/in/chloeguilbaud/)
 
-### Pourquoi ce projet ?
+### **Pourquoi ce projet ?**
 
 Lors de la conférence “Quand le code devient poésie…”, nous avons exploré ensemble les concepts clés du **DDD** et comment cette approche, associée à une architecture hexagonale, peut transformer votre manière de concevoir des logiciels. Mais apprendre ces concepts en théorie, c’est une chose. Les **mettre en pratique**, c’en est une autre !
 
@@ -339,7 +339,7 @@ L'application est construite de manière à séparer les préoccupations liées 
 
 Ces ressources sont conçues pour prolonger votre apprentissage et vous encourager à expérimenter avec le code. Si vous avez des questions ou souhaitez échanger des idées, je suis toujours ravie de discuter — connectez-moi sur [LinkedIn](https://www.linkedin.com/in/chloeguilbaud/) !
 
-# 🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale
+# **🪶 Organisation du Code : Explorer les Concepts Clés du DDD et de l'Architecture Hexagonale**
 
 Ce projet est structuré selon les principes du **DDD** et de l’**architecture hexagonale**. Cette organisation a pour but de séparer les préoccupations (logique métier, infrastructure technique, etc.) pour rendre le code plus compréhensible, maintenable et extensible.
 
@@ -510,7 +510,7 @@ Au fur et à mesure de cet exercice, tu seras amené à implémenter des parties
 
 Prépare-toi à mettre les mains dans le code et à réfléchir à la structure du domaine. Cet exercice est une excellente occasion d’approfondir tes compétences en architecture logicielle et d’acquérir une compréhension solide des principes du DDD et de l'architecture hexagonale.
 
-# 🪶 Passer à la pratique - exercice concret
+# **🪶 Passer à la pratique - exercice concret**
 
 Pour chaque étape, je t’invite vivement à té référer à la cheatsheet et pour rappel tu trouveras une proposition d’implementation dans le package : `billing.implementation.exemple`. 
 
@@ -660,7 +660,7 @@ Ils traduisent des actions réelles que l’entreprise effectue, et que ton logi
 - **Cas d’utilisation métier** : Ce sont les scénarios qui décrivent ce que le domaine doit permettre au métier de faire. Ils reflètent les objectifs métier, pas les détails techniques.
 - **Alignement métier-technique** : Les cas d’utilisation garantissent que le système est conçu **pour servir les objectifs réels de l’entreprise**.
 
-### **Actions pratiques**
+### Actions pratiques
 
 💬 **Imagine la scène :**
 
@@ -668,7 +668,7 @@ Tu es en atelier avec les responsables du service facturation. Ils t’expliquen
 
 Ton rôle : écouter, poser des questions, et **traduire ce que tu entends en cas d’utilisation**.
 
-### 🎯 **Méthodologie pour identifier les cas d’utilisation**
+### 🎯 Méthodologie pour identifier les cas d’utilisation
 
 1️⃣ **Repère les verbes d’action dans les échanges métier**
 
@@ -698,7 +698,7 @@ Exemples :
 
 4️⃣ **Documente les cas d’utilisation dans un format simple et clair.**
 
-### **Pièges à éviter**
+### Pièges à éviter
 
 ❌ Mélanger cas d’utilisation métier et détails techniques (ex : “enregistrer en base”, “exposer un endpoint HTTP”).
 
@@ -706,9 +706,9 @@ Exemples :
 
 ❌ Oublier de valider les cas d’utilisation avec le métier.
 
-## **Étape 3 : Conceptualiser le modèle du domaine**
+## Étape 3 : Conceptualiser le modèle du domaine
 
-### **Contexte**
+### Contexte
 
 À ce stade :
 
@@ -718,7 +718,7 @@ Exemples :
 
 👉 **Prochaine étape : concevoir le modèle du domaine qui reflète fidèlement ces cas d’utilisation et les règles métier.**
 
-### **Pourquoi modéliser le domaine en DDD ?**
+### Pourquoi modéliser le domaine en DDD ?
 
 En Domain-Driven Design, le modèle du domaine est :
 
@@ -728,7 +728,7 @@ En Domain-Driven Design, le modèle du domaine est :
 
 👉 **Un bon modèle de domaine aide à écrire un code qui “parle métier”** et qui reste lisible, maintenable et aligné sur les besoins réels.
 
-### **Objectif pédagogique de l’étape**
+### Objectif pédagogique de l’étape
 
 ✅ Identifier les **éléments clés du modèle** :
 
@@ -740,9 +740,9 @@ En Domain-Driven Design, le modèle du domaine est :
 
 ✅ Poser les bases d’un modèle cohérent qui servira à implémenter les cas d’utilisation.
 
-### **Méthodologie pour conceptualiser le modèle**
+### Méthodologie pour conceptualiser le modèle
 
-### 1️⃣ **Identifier les concepts métier stables et distincts**
+### 1️⃣ Identifier les concepts métier stables et distincts
 
 💬 À partir des cas d’utilisation et de la langue d’ubiquité, liste les concepts stables du domaine :
 
@@ -754,7 +754,7 @@ Exemple dans Facturation :
 - **Paiement**
 - **Identifiant de facture**
 
-### 2️⃣ **Classer ces concepts**
+### 2️⃣ Classer ces concepts
 
 👉 **Entité** : possède une identité unique et persiste dans le temps, même si ses attributs changent.
 
@@ -762,19 +762,19 @@ Exemple dans Facturation :
 
 👉 **Agrégat** : racine du modèle. Regroupe un ensemble cohérent d’entités et d’objets de valeur avec des invariants métier.
 
-### 3️⃣ **Définir les relations**
+### 3️⃣ Définir les relations
 
 - Quelle est l’entité principale (agrégat racine) ?
 - Quels objets sont contenus dans cette entité ?
 - Quelles sont les règles d’intégrité qui lient ces objets ?
 
-### **Résultat attendu**
+### Résultat attendu
 
 ✅ Un schéma simple (papier, diagramme mermaid, UML léger) du modèle du domaine.
 
 ✅ Une description des rôles de chaque élément identifié.
 
-### **Pièges à éviter pour un débutant**
+### Pièges à éviter pour un débutant
 
 ❌ Tout transformer en entité par défaut : commence par des objets de valeur quand c’est possible (ex : `TotalAmount`, `InvoiceId`).
 
@@ -784,7 +784,7 @@ Exemple dans Facturation :
 
 ## Étape 4 : Implémentation du modèle
 
-### **Contexte**
+### Contexte
 
 👉 Tu as travaillé sur la conceptualisation du modèle de ton domaine : tu as identifié les **entités**, les **objets de valeur**, et les **agrégats** (par exemple : `Invoice` comme agrégat racine).
 
@@ -792,7 +792,7 @@ Exemple dans Facturation :
 
 💡 Il est temps de **passer du modèle conceptuel au code**, en respectant les principes du DDD.
 
-### **Pourquoi implémenter le modèle avant tout autre chose ?**
+### Pourquoi implémenter le modèle avant tout autre chose ?
 
 Dans une architecture DDD :
 
@@ -804,7 +804,7 @@ Dans une architecture DDD :
 
 👉 Tu construis d’abord un modèle **pur métier**, qui sera utilisé par les services, les cas d’utilisation, et les ports.
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Traduire le modèle du domaine en **code métier clair et riche**, sans dépendance technique.
 
@@ -812,7 +812,7 @@ Dans une architecture DDD :
 
 ✅ Préparer un modèle facilement testable et évolutif.
 
-### **Exercice pratique et méthodologie**
+### Exercice pratique et méthodologie
 
 👉 À partir du modèle conceptuel :
 
@@ -831,7 +831,7 @@ Dans une architecture DDD :
 
 👉 **Dans un modèle DDD, les invariants métier sont protégés au sein du modèle lui-même : ce sont les entités, agrégats et objets de valeur qui font respecter les règles, et non le code extérieur.**
 
-### **Pièges à éviter**
+### Pièges à éviter
 
 ❌ Se contenter de getters / setters sans logique métier : un modèle DDD doit **porter les règles du domaine**.
 
@@ -841,7 +841,7 @@ Dans une architecture DDD :
 
 ## Étape 5 : Création des services du domaine
 
-### **Contexte**
+### Contexte
 
 👉 Tu as maintenant un **modèle du domaine solide** :
 
@@ -853,7 +853,7 @@ Dans une architecture DDD :
 - concerne plusieurs objets du modèle, 
 - représente des actions métier « de plus haut niveau ».
 
-### **Pourquoi créer des services de domaine en DDD ?**
+### Pourquoi créer des services de domaine en DDD ?
 
 En DDD :
 
@@ -866,7 +866,7 @@ En DDD :
 
 💬 *Un service du domaine est comme un opérateur métier extérieur qui orchestre les agrégats pour accomplir un but métier.*
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Comprendre ce qu’est un service de domaine et quand l’utiliser.
 
@@ -874,7 +874,7 @@ En DDD :
 
 ✅ Créer un service du domaine propre, sans dépendances techniques.
 
-### **Quand créer un service de domaine ?**
+### Quand créer un service de domaine ?
 
 💡 Critères :
 
@@ -882,7 +882,7 @@ En DDD :
 - L’opération exprime une **action métier** (pas technique).
 - Le service manipule un ou plusieurs agrégats, mais ne porte pas d’état propre durable.
 
-### **Passer à la pratique : Facturation de HiShoes**
+### Passer à la pratique : Facturation de HiShoes
 
 👉 Crée un service du domaine qui :
 
@@ -900,7 +900,7 @@ Dans l'étape suivante, nous ferons un peu de refactoring pour améliorer encore
 - Donne-lui un mock d’`OrderService` et un `InvoiceRepository` in-memory ;
 - Vérifie qu’il produit une facture valide.
 
-### **Résultat attendu**
+### Résultat attendu
 
 ✅ Un service du domaine qui :
 
@@ -909,7 +909,7 @@ Dans l'étape suivante, nous ferons un peu de refactoring pour améliorer encore
 - appelle le modèle du domaine pour accomplir des actions métier ;
 - peut être testé indépendamment des couches techniques.
 
-### **Pièges à éviter pour un débutant**
+### Pièges à éviter pour un débutant
 
 ❌ Utiliser un service de domaine pour des actions purement techniques (ex : persister en base, exposer un endpoint).
 
@@ -927,7 +927,7 @@ Dans l'étape suivante, nous ferons un peu de refactoring pour améliorer encore
 
 💡 Maintenant, tu vas **organiser le code pour exécuter ces cas d’utilisation** dans un style propre, cohérent et facile à maintenir.
 
-### **Pourquoi utiliser un pattern Command / Query ?**
+### Pourquoi utiliser un pattern Command / Query ?
 
 Dans une architecture DDD + hexagonale :
 
@@ -943,7 +943,7 @@ Dans une architecture DDD + hexagonale :
 
 💬 *Un cas d’utilisation = un scénario métier exprimé sous forme d’un handler Command ou Query.*
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Organiser le code autour de cas d’utilisation clairs et indépendants de la technique.
 
@@ -951,14 +951,14 @@ Dans une architecture DDD + hexagonale :
 
 ✅ Appliquer Query pour les lectures (ex : retrouver une facture par son ID).
 
-### 🌟 **Explication du pattern Command / Query dans le contexte DDD**
+### 🌟 Explication du pattern Command / Query dans le contexte DDD
 
 Dans un système orienté DDD et architecture hexagonale, on distingue :
 
 - les **Commandes (Commands)** : elles expriment une **intention**.
 - les **Requêtes (Queries)** : elles récupèrent des **informations** sans modifier l’état du système.
 
-### **Command : exprimer une intention**
+### Command : exprimer une intention
 
 👉 Une commande représente **l’action qu’un utilisateur ou un système externe veut demander au domaine**.
 
@@ -974,7 +974,7 @@ Dans un système orienté DDD et architecture hexagonale, on distingue :
 
 La Command ne décrit pas *comment* l’action sera réalisée, elle **exprime l’intention** à transmettre au domaine et à l’application.
 
-### **Query : fournir des informations pour guider une décision**
+### Query : fournir des informations pour guider une décision
 
 👉 Une requête représente **un besoin de lecture**, pour obtenir des données qui aideront l’utilisateur (ou un système) à **prendre une décision**.
 
@@ -991,13 +991,13 @@ Ces informations permettront à l’utilisateur de :
 
 👉 *« Voir ce qui reste à payer »* → puis exprimer une intention via une commande (*PayInvoiceCommand*).
 
-### **Vision complémentaire : le dialogue Command / Query**
+### Vision complémentaire : le dialogue Command / Query
 
 👉 **La Query permet à l’utilisateur de comprendre l’état du système pour formuler ensuite une Command qui exprime une intention.**
 
 👉 **La Command est la matérialisation de cette intention, que l’application et le domaine vont traiter pour agir.**
 
-### **Pourquoi ce pattern est utile ?**
+### Pourquoi ce pattern est utile ?
 
 ✅ Il clarifie les responsabilités :
 
@@ -1008,7 +1008,7 @@ Ces informations permettront à l’utilisateur de :
 
 ✅ Il aide à aligner le code sur le langage métier (Ubiquitous Language).
 
-### **Exercice pratique**
+### Exercice pratique
 
 👉 Implémente :
 
@@ -1026,7 +1026,7 @@ Ces informations permettront à l’utilisateur de :
 - Tu passes un Command, tu verifies que l’agrégat a bien été créé / modifié.
 - Tu passes un Query, tu verifies que les bonnes données sont retournées.
 
-### **Résultat attendu**
+### Résultat attendu
 
 ✅ Un code qui exprime clairement les intentions métier :
 
@@ -1038,7 +1038,7 @@ Ces informations permettront à l’utilisateur de :
 - Les **CommandHandlers** ne font que modifier l’état.
 - Les **QueryHandlers** ne font que lire l’état.
 
-### **Pièges à éviter**
+### Pièges à éviter
 
 ❌ Mélanger lecture et écriture dans un même handler.
 
@@ -1046,9 +1046,9 @@ Ces informations permettront à l’utilisateur de :
 
 ❌ Injecter des adaptateurs techniques (ex : base de données, frameworks) directement dans les Command : les Command restent des objets simples.
 
-## **Étape 7 : Ports et adaptateurs sortants**
+## Étape 7 : Ports et adaptateurs sortants
 
-### **Contexte**
+### Contexte
 
 👉 Tu as désormais :
 
@@ -1062,7 +1062,7 @@ Ces informations permettront à l’utilisateur de :
 
 C’est là qu’interviennent les **ports** et **adaptateurs**, concepts essentiels de l’**architecture hexagonale** (ou **Ports & Adapters**).
 
-### **Pourquoi des ports et adaptateurs ?**
+### Pourquoi des ports et adaptateurs ?
 
 En architecture hexagonale :
 
@@ -1074,7 +1074,7 @@ En architecture hexagonale :
 
 💬 *Les ports définissent ce dont le domaine a besoin, les adaptateurs réalisent concrètement ces besoins.*
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Savoir **définir un port (interface)** exprimant un besoin du domaine.
 
@@ -1097,7 +1097,7 @@ En architecture hexagonale :
 - crée une facture via le domaine + repository in-memory,
 - vérifie que la facture est bien stockée et retrouvée.
 
-### **Résultat attendu**
+### Résultat attendu
 
 ✅ Le domaine ne connaît que des interfaces (ports).
 
@@ -1105,7 +1105,7 @@ En architecture hexagonale :
 
 ✅ Tu peux changer un adaptateur sans toucher au domaine (ex : passer de JPA à Mongo sans modifier le modèle).
 
-### **Pièges à éviter pour un débutant**
+### Pièges à éviter pour un débutant
 
 ❌ Lier directement le domaine à une technologie (ex : mettre des annotations JPA sur tes entités de domaine).
 
@@ -1113,9 +1113,9 @@ En architecture hexagonale :
 
 ❌ Oublier d’écrire des implémentations simples (in-memory) pour faciliter les tests.
 
-## **Étape finale : Assemblage et test de bout en bout**
+## Étape finale : Assemblage et test de bout en bout
 
-### **Contexte**
+### Contexte
 
 👉 Tu as conçu et codé :
 
@@ -1129,7 +1129,7 @@ En architecture hexagonale :
 
 💡 **L’étape finale consiste à assembler ces éléments, les relier via des adaptateurs entrants (par exemple un contrôleur REST), et valider l’ensemble avec des tests.**
 
-### **Objectif pédagogique**
+### Objectif pédagogique
 
 ✅ Comprendre comment connecter les couches sans casser les principes de l’architecture hexagonale.
 
@@ -1137,7 +1137,7 @@ En architecture hexagonale :
 
 ✅ Valider le flux métier complet : **du client à la persistance, en passant par le domaine**.
 
-# 🪶 **Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**
+# **🪶 Résultat attendu ou proposition de compréhension du domaine métier de l’entreprise**
 
 >**Retrouve une proposition d'implémentation complète dans le package `billing.implementation.exemple` du projet.**
 > 
@@ -1160,7 +1160,7 @@ Par exemple :
 
 ## Étape 2 : Identifier les cas d’utilisation métier
 
-### **Cas d’utilisation identifiés pour HiShoes — Facturation**
+### Cas d’utilisation identifiés pour HiShoes — Facturation
 
 | Cas d’utilisation | Acteur principal                   | Description métier                                                                                                                    |
 |-------------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
@@ -1169,7 +1169,7 @@ Par exemple :
 
 ---
 
-### **Résultat attendu**
+### Résultat attendu
 
 ✅ Une **liste claire des cas d’utilisation du sous-domaine Facturation**, exprimée dans un langage métier.
 
@@ -1180,33 +1180,33 @@ Par exemple :
 - conceptualiser le modèle du domaine (prochaine étape) ;
 - concevoir les services et les interfaces.
 
-### **Exemple de cas d’utilisation : Créer une facture pour une commande validée**
+### Exemple de cas d’utilisation : Créer une facture pour une commande validée
 
-### **Nom du cas d’utilisation**
+### Nom du cas d’utilisation
 
 Créer une facture pour une commande validée
 
-### **Objectif**
+### Objectif
 
 Générer une facture associée à une commande dès qu’elle est validée.
 
 La facture contient les détails de la commande, le montant total, les taxes et le statut initial `EN_ATTENTE`.
 
-### **Acteurs principaux**
+### Acteurs principaux
 
 - **Système de gestion des commandes** (Order Management System) : déclencheur du cas d’utilisation.
 - **Service de facturation (Billing)** : réalise l’action.
 - **Client** (indirectement concerné : destinataire de la facture).
 
-### **Pré-condition**
+### Pré-condition
 
 - La commande existe et son statut est `VALIDÉE`.
 
-### **Déclencheur**
+### Déclencheur
 
 - Le système de gestion des commandes notifie le module Facturation qu'une commande a été validée.
 
-### **Description du scénario principal**
+### Description du scénario principal
 
 1️⃣ Le système de gestion des commandes envoie un message avec l’identifiant de la commande validée.
 
@@ -1220,7 +1220,7 @@ La facture contient les détails de la commande, le montant total, les taxes et 
 
 6️⃣ La facture est rendue disponible pour consultation (par exemple via un portail client ou un envoi par email).
 
-### **Règles métier**
+### Règles métier
 
 ✅ Chaque commande validée doit donner lieu à une seule facture.
 
@@ -1230,22 +1230,22 @@ La facture contient les détails de la commande, le montant total, les taxes et 
 
 ✅ La facture garde la trace de l'identifiant de la commande.
 
-### **Exceptions**
+### Exceptions
 
 ❌ La commande n’existe pas → Le système logge une erreur et rejette l’opération.
 
 ❌ Une facture existe déjà pour cette commande → Le système rejette la création d’une nouvelle facture.
 
-### **Post-condition**
+### Post-condition
 
 Une facture est créée, associée à la commande validée, et stockée.
 
-### **Données manipulées**
+### Données manipulées
 
 - Commande : ID, lignes (produit, quantité, prix unitaire), montant.
 - Facture : ID, référence commande, lignes, montant total, statut.
 
-### **Langue d’ubiquité utilisée**
+### Langue d’ubiquité utilisée
 
 - Commande
 - Facture
@@ -1253,11 +1253,11 @@ Une facture est créée, associée à la commande validée, et stockée.
 - Montant total
 - Statut de la facture (`EN_ATTENTE`)
 
-### **Étape 3 : Conceptualiser le modèle du domaine**
+### Étape 3 : Conceptualiser le modèle du domaine
 
 *Exemple : modèle de domaine Facturation HiShoes*
 
-### Agrégat racine : **Facture (Invoice)**
+### Agrégat racine : **Facture (Invoice)
 
 - Entité principale qui représente la facture d’une commande.
 - Possède un **InvoiceId** (objet de valeur identifiant unique).
@@ -1276,7 +1276,7 @@ Une facture est créée, associée à la commande validée, et stockée.
 | **TotalAmount**       | Objet de valeur               | Représente le montant dû, immuable une fois calculé              |
 | **Paiement**          | Entité ou évènement métier    | Enregistrement d’un règlement partiel ou total de la facture     |
 
-### **Règles métier intégrées au modèle**
+### Règles métier intégrées au modèle
 
 ✅ Une facture connaît son statut et gère elle-même le changement de statut en fonction des paiements reçus.
 
@@ -1288,7 +1288,7 @@ Une facture est créée, associée à la commande validée, et stockée.
 
 ## Étape 4 : Implémentation du modèle
 
-### 1️⃣ **Commence par les objets de valeur**
+### 1️⃣ Commence par les objets de valeur
 
 💬 Ce sont des petits objets, immuables, souvent très simples à coder.
 
@@ -1307,7 +1307,7 @@ public record InvoiceId(String value) {
 
 👉 Ici on utilise `record` en Java, `record struct` en C#, `type` ou `class` immuable en TypeScript.
 
-### 2️⃣ **Code l’agrégat racine**
+### 2️⃣ Code l’agrégat racine
 
 💬 L’agrégat racine doit :
 
@@ -1363,7 +1363,7 @@ public class Invoice {
 - gère lui-même son état (statut),
 - vérifie les règles métier (ex : ne pas dépasser le montant dû).
 
-### 3️⃣ **Implémente les autres entités / VO**
+### 3️⃣ Implémente les autres entités / VO
 
 Exemple pour `InvoiceLine` :
 
@@ -1432,7 +1432,7 @@ public record Money(BigDecimal amount, String currency) {
 
 👉 La règle métier dit : *« On ne peut pas payer plus que le montant dû »*.
 
-### **Mauvaise approche (la règle est laissée au code extérieur)**
+### Mauvaise approche (la règle est laissée au code extérieur)
 
 ```java
 // Service externe qui fait la vérification au lieu du modèle
@@ -1444,7 +1444,7 @@ invoice.getPayments().add(payment);
 
 ⚠ Ici, la **logique métier est dispersée** dans le code extérieur. Le modèle n’a aucun contrôle sur ce qu’on lui ajoute.
 
-### **Bonne approche (le modèle garantit lui-même son intégrité)**
+### Bonne approche (le modèle garantit lui-même son intégrité)
 
 ```java
 public void addPayment(Payment payment) {
@@ -1496,7 +1496,7 @@ Les invariants sont ce qui fait que ton modèle **reste valide et fidèle au mé
 
 ## Étape 5 : Création des services du domaine
 
-### **Exemple de code (Java / pseudo code simplifié)**
+### Exemple de code (Java / pseudo code simplifié)
 
 ```java
 public class BillingDomainService {
@@ -1542,7 +1542,7 @@ public class BillingDomainService {
 
 ## Étape 6 : Implémentation des cas d’utilisation — Pattern Command / Query
 
-### **Structure type d’un cas d’utilisation**
+### Structure type d’un cas d’utilisation
 
 👉 Command (action)
 
@@ -1560,9 +1560,9 @@ public class BillingDomainService {
 
 ```
 
-### **Exemple concret : créer une facture (Command)**
+### Exemple concret : créer une facture (Command)
 
-### 📝 **Command**
+### 📝 Command
 
 ```java
 public record CreateInvoiceCommand(String orderId) { }
@@ -1571,7 +1571,7 @@ public record CreateInvoiceCommand(String orderId) { }
 
 ➡ Simple data holder : ce que l’appelant fournit.
 
-### 📝 **CommandHandler**
+### 📝 CommandHandler
 
 ```java
 public class CreateInvoiceCommandHandler {
@@ -1590,16 +1590,16 @@ public class CreateInvoiceCommandHandler {
 
 ✅ Le **handler** est l’entrée de ton application côté métier : il orchestre l’appel au domaine.
 
-### **Exemple concret : retrouver une facture (Query)**
+### Exemple concret : retrouver une facture (Query)
 
-### 📝 **Query**
+### 📝 Query
 
 ```java
 public record GetInvoiceByIdQuery(String invoiceId) { }
 
 ```
 
-### 📝 **QueryHandler**
+### 📝 QueryHandler
 
 ```java
 public class GetInvoiceByIdQueryHandler {
@@ -1618,9 +1618,9 @@ public class GetInvoiceByIdQueryHandler {
 
 ## Étape 7 : Ports et adaptateurs sortants
 
-### **Exemple concret : Facturation HiShoes**
+### Exemple concret : Facturation HiShoes
 
-### **Port : `InvoiceRepository`**
+### Port : `InvoiceRepository`
 
 ➡ Le domaine a besoin de **sauvegarder et retrouver des factures**.
 
@@ -1636,7 +1636,7 @@ public interface InvoiceRepository {
 
 ✅ **Le domaine ne sait pas comment la facture est stockée** : base SQL, NoSQL, fichier, en mémoire… peu importe.
 
-### **Port : `PaymentProcessor` (exemple optionnel)**
+### Port : `PaymentProcessor` (exemple optionnel)
 
 ➡ Si le domaine doit interagir avec un service externe pour valider un paiement :
 
@@ -1647,7 +1647,7 @@ public interface PaymentProcessor {
 
 ```
 
-### **Adaptateur sortant : une implémentation de `InvoiceRepository`**
+### Adaptateur sortant : une implémentation de `InvoiceRepository`
 
 👉 Exemple : un repository en mémoire pour les tests
 
@@ -1694,7 +1694,7 @@ public class JpaInvoiceRepository implements InvoiceRepository {
 
 ## Étape finale : Assemblage et test de bout en bout
 
-### 1️⃣ **Adaptateurs entrants : exposer les cas d’utilisation**
+### 1️⃣ Adaptateurs entrants : exposer les cas d’utilisation
 
 💬 Exemple REST Controller pour créer une facture :
 
@@ -1730,7 +1730,7 @@ public class InvoiceController {
 
 ✅ L’adaptateur entrant **ne contient pas de logique métier** : il délègue au Command/Query Handler.
 
-### 2️⃣ **Assembler les ports et adaptateurs**
+### 2️⃣ Assembler les ports et adaptateurs
 
 💬 Par exemple, via injection Spring ou instanciation manuelle en test :
 
@@ -1746,7 +1746,7 @@ GetInvoiceByIdQueryHandler queryHandler = new GetInvoiceByIdQueryHandler(repo);
 
 👉 Tu relies les ports à leurs adaptateurs **sans toucher au domaine**.
 
-### 3️⃣ **Écrire un test de bout en bout**
+### 3️⃣ Écrire un test de bout en bout
 
 💬 Exemple JUnit (ou équivalent dans un autre langage)
 
@@ -1782,7 +1782,7 @@ void shouldCreateAndRetrieveInvoice() {
 - Implémentation des events de domaine 
 - Mise en place de tests unitaires
 
-# 🪶 **Des questions ? Des retours ?**
+# **🪶 Des questions ? Des retours ?**
 
 Je serais ravie d’échanger avec vous sur vos expériences, vos questions, ou vos suggestions pour améliorer ce projet.
 
